@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
+import { Navbar } from '../../common/index';
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
   return (
     <div>
       <h1>Hi {userInfo.name} Welcome to Labs Basic SPA</h1>
-      <div>
+      <Navbar />
+      {/*<div>
         <p>
           This is an example of a common example of how we'd like for you to
           approach components.
@@ -26,7 +28,7 @@ function RenderHomePage(props) {
             Logout
           </Button>
         </p>
-      </div>
+      </div>*/}
     </div>
   );
 }
