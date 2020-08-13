@@ -17,7 +17,8 @@ const LoginContainer = () => {
       },
       features: { registration: true },
       // turning this feature on allows your widget to use Okta for user registration
-      logo: 'path-to-your-logo',
+      logo: './../../../public/media/Logo-320.png',
+      logoText: 'SaverLife Logo',
       // add your custom logo to your signing/register widget here.
       i18n: {
         en: {
