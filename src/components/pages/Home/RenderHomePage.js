@@ -1,29 +1,39 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-import { Button } from 'antd';
+import Plot from 'react-plotly.js';
+import { Button, Progress } from 'antd';
 import { Navbar } from '../../common/index';
+
+var data = [
+  {
+    values: [19, 26, 55],
+    labels: ['Residential', 'Non-Residential', 'Utility'],
+    type: 'pie',
+  },
+];
+
+var layout = {
+  height: 400,
+  width: 600,
+};
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
   return (
     <div>
-      <h1>Hi {userInfo.name} Welcome to Labs Basic SPA</h1>
       <Navbar />
-      {/*<div>
-        <p>
-          This is an example of a common example of how we'd like for you to
-          approach components.
-        </p>
-        <p>
-          <Link to="/profile-list">Profiles Example</Link>
-        </p>
-        <p>
-          <Link to="/example-list">Example List of Items</Link>
-        </p>
-        <p>
-          <Link to="/datavis">Data Visualizations Example</Link>
-        </p>
-      </div>*/}
+      <h1>Hi {userInfo.name}, Welcome to SaverLife</h1>
+      <div>
+        <h1>Progress towards Goal</h1>
+        <Progress
+          strokeColor={{ '0%': '#ecb7db', '100%': '#c01089' }}
+          percent={99}
+        />
+      </div>
+      <h1>Deadline: 30 Days</h1>
+      <div style={{ border: '1px solid red' }}>
+        <Plot data={data} layout={layout} />
+        <h1>Current Spending</h1>
+      </div>
       <Button type="primary" onClick={() => authService.logout()}>
         Logout
       </Button>
