@@ -5,9 +5,10 @@ import '../../styles/Navbar.css';
 const Navbar = props => {
   return (
     <nav className="navbar">
-      <Link to="/example-list">Example List</Link>
-      <Link to="/profile-list">Profile List</Link>
-      <Link to="/datavis">Data Vis</Link>
+      <Link to="/">Home</Link>
+      <Link to="/">Past Spending</Link>
+      <Link to="/">Budget Comparison</Link>
+      <Link to="/">Projected Savings</Link>
     </nav>
   );
 };
