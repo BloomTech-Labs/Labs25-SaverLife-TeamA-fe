@@ -1,7 +1,7 @@
 import React from 'react';
+import Plot from 'react-plotly.js';
 import { Button, Progress } from 'antd';
 import { Navbar } from '../../common/index';
-import Plot from 'react-plotly.js';
 
 var data = [
   {
