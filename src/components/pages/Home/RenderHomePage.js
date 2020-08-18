@@ -21,6 +21,7 @@ function RenderHomePage(props) {
   return (
     <div>
       <Navbar />
+      {console.log(userInfo)}
       <h1>Hi {userInfo.name}, Welcome to SaverLife</h1>
       <div>
         <h1>Progress towards Goal</h1>
