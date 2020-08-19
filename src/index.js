@@ -53,10 +53,6 @@ function App() {
         />
         <SecureRoute path="/past-spending" component={PastSpendingPage} />
         <SecureRoute
-          path="/budget-comparison"
-          component={BudgetComparisonPage}
-        />
-        <SecureRoute
           path="/projected-savings"
           component={ProjectedSavingsPage}
         />

@@ -22,7 +22,7 @@ const Navbar = props => {
         <Link to="/past-spending">Past Spending</Link>
       </Menu.Item>
       <Menu.Item key="budget-comparison" icon={<AppstoreOutlined />}>
-        <Link to="/budget-comparison">Budget Comparison</Link>
+        <Link to="/">Budget Comparison</Link>
       </Menu.Item>
       <Menu.Item key="projected-savings" icon={<AppstoreOutlined />}>
         <Link to="/projected-savings">Projected Savings</Link>
