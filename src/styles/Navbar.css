@@ -2,3 +2,10 @@
     display: flex;
     justify-content: space-around;
 }
+
+.spinner-div {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    margin-top: 45vh;
+}
