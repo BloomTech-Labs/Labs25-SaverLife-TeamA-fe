@@ -15,7 +15,6 @@ import { ProfileListPage } from './components/pages/ProfileList';
 import { LoginPage } from './components/pages/Login';
 import { HomePage } from './components/pages/Home';
 import { PastSpendingPage } from './components/pages/PastSpending';
-import { BudgetComparisonPage } from './components/pages/BudgetComparison';
 import { ProjectedSavingsPage } from './components/pages/ProjectedSavings';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
