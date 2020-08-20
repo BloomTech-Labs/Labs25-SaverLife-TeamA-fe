@@ -6,6 +6,10 @@ const RenderProjectedSavingsPage = props => {
     <div>
       <Navbar />
       <h1>Projected Savings</h1>
+      <img
+        src="https://www.smartsheet.com/sites/default/files/ic-line-charts-excel-single-line-graph-created.png"
+        alt="line graph stuff"
+      />
     </div>
   );
 };

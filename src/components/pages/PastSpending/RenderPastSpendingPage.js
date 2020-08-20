@@ -1,22 +1,6 @@
 import React from 'react';
 import Navbar from '../../common/Navbar';
-import Plot from 'react-plotly.js';
 import { Progress } from 'antd';
-
-var data = [
-  // x is date
-  // y is amount they spent on that day
-  {
-    type: 'bar',
-    x: ['09/15/2020', '09/16/2020', '09/17/2020', '09/18/2020', '09/19/2020'],
-    y: [2, 5, 3, 80, 120],
-  },
-];
-
-var layout = {
-  height: 400,
-  width: 800,
-};
 
 const RenderPastSpendingPage = props => {
   return (
@@ -29,9 +13,12 @@ const RenderPastSpendingPage = props => {
           percent={99}
         />
       </div>
-      <h1>Spending over the past (insert time period here)</h1>
+      <h1>Graph will go below this</h1>
       <div>
-        <Plot data={data} layout={layout} />
+        <img
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ea0be3d4-ead6-41cf-9440-d74dac5b31e0/dcwny3l-1b647289-df6f-4650-b681-c083dc9cdd5e.jpg/v1/fill/w_1024,h_576,q_75,strp/the_cat_in_the_hat_hang_in_there_baby__by_lah2000_dcwny3l-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD01NzYiLCJwYXRoIjoiXC9mXC9lYTBiZTNkNC1lYWQ2LTQxY2YtOTQ0MC1kNzRkYWM1YjMxZTBcL2Rjd255M2wtMWI2NDcyODktZGY2Zi00NjUwLWI2ODEtYzA4M2RjOWNkZDVlLmpwZyIsIndpZHRoIjoiPD0xMDI0In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.GlkUeJzSgZ-ct1ipGhhIxW637Mk3inQEO2Rx4hQB60g"
+          alt="some graph here"
+        />
       </div>
     </div>
   );
