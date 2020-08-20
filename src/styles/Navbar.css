@@ -26,3 +26,10 @@
 h1, h2 {
     text-align: center;
 }
+
+.spinner-div {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    margin-top: 45vh;
+}

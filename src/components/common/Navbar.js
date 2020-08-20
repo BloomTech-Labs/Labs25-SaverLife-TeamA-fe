@@ -19,13 +19,13 @@ const Navbar = props => {
         <Link to="/">Home</Link>
       </Menu.Item>
       <Menu.Item key="past-spending" icon={<AppstoreOutlined />}>
-        <Link to="/">Past Spending</Link>
+        <Link to="/past-spending">Past Spending</Link>
       </Menu.Item>
       <Menu.Item key="budget-comparison" icon={<AppstoreOutlined />}>
         <Link to="/">Budget Comparison</Link>
       </Menu.Item>
       <Menu.Item key="projected-savings" icon={<AppstoreOutlined />}>
-        <Link to="/">Projected Savings</Link>
+        <Link to="/projected-savings">Projected Savings</Link>
       </Menu.Item>
     </Menu>
   );
