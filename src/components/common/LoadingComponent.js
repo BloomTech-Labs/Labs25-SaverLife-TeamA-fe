@@ -4,9 +4,10 @@ import { Spin } from 'antd';
 
 import '../../styles/Navbar.css';
 
-function LoadingComponent() {
+function LoadingComponent(props) {
   return (
     <div className="spinner-div">
+      <p>{props.message}</p>
       <Spin size="large" />
     </div>
   );
