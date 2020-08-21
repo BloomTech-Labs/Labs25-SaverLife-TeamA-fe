@@ -14,17 +14,34 @@ const Navbar = props => {
   };
 
   return (
-    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
-      <Menu.Item key="home" icon={<MailOutlined />}>
+    <Menu
+      onClick={handleClick}
+      selectedKeys={[current]}
+      mode="horizontal"
+      className="navBar"
+    >
+      <Menu.Item key="home" icon={<MailOutlined />} className="navItem">
         <Link to="/">Home</Link>
       </Menu.Item>
-      <Menu.Item key="past-spending" icon={<AppstoreOutlined />}>
+      <Menu.Item
+        key="past-spending"
+        icon={<AppstoreOutlined />}
+        className="navItem"
+      >
         <Link to="/past-spending">Past Spending</Link>
       </Menu.Item>
-      <Menu.Item key="budget-comparison" icon={<AppstoreOutlined />}>
+      <Menu.Item
+        key="budget-comparison"
+        icon={<AppstoreOutlined />}
+        className="navItem"
+      >
         <Link to="/">Budget Comparison</Link>
       </Menu.Item>
-      <Menu.Item key="projected-savings" icon={<AppstoreOutlined />}>
+      <Menu.Item
+        key="projected-savings"
+        icon={<AppstoreOutlined />}
+        className="navItem"
+      >
         <Link to="/projected-savings">Projected Savings</Link>
       </Menu.Item>
     </Menu>
