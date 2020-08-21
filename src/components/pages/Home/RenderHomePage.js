@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Progress } from 'antd';
 import { Navbar } from '../../common/index';
 
-import '../../../styles/styles.css';
+import '../../../styles/Navbar.css';
 
 // var data = [
 //   {
@@ -40,6 +40,7 @@ function RenderHomePage(props) {
       </div>
 
       <div className="contentContainer">
+        <h1>Hi {userInfo.name}, Welcome to SaverLife</h1>
         <div className="progressDiv">
           <Progress
             strokeColor={{ '0%': '#ecb7db', '100%': '#c01089' }}
