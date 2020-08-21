@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../../common/Navbar';
 import { Button, Progress } from 'antd';
 
-import '../../../styles/styles.css';
+import '../../../styles/Navbar.css';
 
 const RenderPastSpendingPage = props => {
   const { userInfo, authService } = props;

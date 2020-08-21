@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Progress } from 'antd';
 import Navbar from '../../common/Navbar';
 
-import '../../../styles/styles.css';
+import '../../../styles/Navbar.css';
 
 const RenderProjectedSavingsPage = props => {
   const { userInfo, authService } = props;
