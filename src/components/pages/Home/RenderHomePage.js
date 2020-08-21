@@ -5,24 +5,6 @@ import { Navbar } from '../../common/index';
 
 import '../../../styles/Navbar.css';
 
-// var data = [
-//   {
-//     type: 'pie',
-//     values: [2, 3, 4, 4],
-//     labels: ['Wages', 'Operating expenses', 'Cost of sales', 'Insurance'],
-//     textinfo: 'label+percent',
-//     textposition: 'inside',
-//     automargin: true,
-//   },
-// ];
-
-// var layout = {
-//   height: 400,
-//   width: 400,
-//   margin: { t: 0, b: 0, l: 0, r: 0 },
-//   showlegend: false,
-// };
-
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
   return (
@@ -52,8 +34,6 @@ function RenderHomePage(props) {
         <h2>Deadline: 30 Days</h2>
 
         <div className="mainContent">
-          {/* <Plot data={data} layout={layout} /> */}
-
           <div className="chartContainer">
             <h1>Container Holding Chart</h1>
           </div>
