@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SaverLifeLogo from '../../common/media/Logo-320.png';
 import OktaSignIn from '@okta/okta-signin-widget';
 import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 
@@ -15,11 +16,13 @@ const LoginContainer = () => {
       registration: {
         // there is more we can do to handle some errors here.
       },
-      features: { registration: true },
+      features: { registration: false },
       // turning this feature on allows your widget to use Okta for user registration
-      logo: './../../../public/media/Logo-320.png',
+      logo: SaverLifeLogo,
       logoText: 'SaverLife Logo',
-      // add your custom logo to your signing/register widget here.
+      colors: {
+        brand: '#c01089',
+      },
       i18n: {
         en: {
           'primaryauth.title': 'Welcome to SaverLife Please sign in',
