@@ -29,10 +29,10 @@ function RenderHomePage(props) {
           <div className="chartContainer">
             <h1>Container Holding Chart</h1>
           </div>
-
           <h1>Current Spending</h1>
         </div>
       </div>
+      <div className="topbarContainer"></div>
     </div>
   );
 }
