@@ -58,7 +58,7 @@ const Navbar = props => {
       <Menu.Item
         key="profile-menu"
         icon={<AppstoreOutlined />}
-        className="navItem"
+        className="navItem dropdown"
       >
         <Dropdown overlay={profileMenu} trigger={['click']}>
           <a onClick={e => e.preventDefault()}>Profile</a>
