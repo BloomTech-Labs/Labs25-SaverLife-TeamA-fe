@@ -1,23 +1,15 @@
 import React from 'react';
-import { Button, Progress } from 'antd';
+// import { Progress } from 'antd';
 import Navbar from '../../common/Navbar';
 
 import '../../../styles/Navbar.css';
 
 const RenderProjectedSavingsPage = props => {
-  const { userInfo, authService } = props;
+  const { authService } = props;
   return (
     <div className="pageContainer">
       <div className="navContainer">
-        <Navbar />
-
-        <Button
-          type="primary"
-          onClick={() => authService.logout()}
-          className="mainButton"
-        >
-          Logout
-        </Button>
+        <Navbar authService={authService} />
       </div>
 
       <div className="contentContainer">

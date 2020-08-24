@@ -1,17 +1,28 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Menu } from 'antd';
+import { Menu, Dropdown } from 'antd';
 import { MailOutlined, AppstoreOutlined } from '@ant-design/icons';
 
 import '../../styles/Navbar.css';
 
 const Navbar = props => {
   const [current, setCurrent] = useState('mail');
+  const { authService } = props;
 
   const handleClick = e => {
     setCurrent(e.key);
   };
+
+  const profileMenu = (
+    <Menu>
+      <Menu.Item key="0">Test 0</Menu.Item>
+      <Menu.Item key="0">Test 1</Menu.Item>
+      <Menu.Item key="0">Test 2</Menu.Item>
+      <Menu.Divider />
+      <Menu.Item onClick={() => authService.logout()}>Logout</Menu.Item>
+    </Menu>
+  );
 
   return (
     <Menu
@@ -43,6 +54,15 @@ const Navbar = props => {
         className="navItem"
       >
         <Link to="/projected-savings">Projected Savings</Link>
+      </Menu.Item>
+      <Menu.Item
+        key="profile-menu"
+        icon={<AppstoreOutlined />}
+        className="navItem"
+      >
+        <Dropdown overlay={profileMenu} trigger={['click']}>
+          <a onClick={e => e.preventDefault()}>Profile</a>
+        </Dropdown>
       </Menu.Item>
     </Menu>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 // import Plot from 'react-plotly.js';
-import { Button, Progress } from 'antd';
+import { Progress } from 'antd';
 import { Navbar } from '../../common/index';
 
 import '../../../styles/Navbar.css';
@@ -10,15 +10,7 @@ function RenderHomePage(props) {
   return (
     <div className="pageContainer">
       <div className="navContainer">
-        <Navbar />
-
-        <Button
-          type="primary"
-          onClick={() => authService.logout()}
-          className="mainButton"
-        >
-          Logout
-        </Button>
+        <Navbar authService={authService} />
       </div>
 
       <div className="contentContainer">
