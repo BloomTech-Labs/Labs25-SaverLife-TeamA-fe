@@ -14,9 +14,12 @@ describe('<RenderHomePage /> test suite', () => {
         <RenderHomePage userInfo={{ name: 'Sara' }} authService={authService} />
       </Router>
     );
-    const button = getByText(/logout/i);
-    userEvent.click(button);
+    const dropdown = getByText(/profile/i);
+    userEvent.click(dropdown);
+    const logout = getByText(/logout/i);
+    userEvent.click(logout);
     expect(authService.logout).toHaveBeenCalledTimes(1);
+    expect(getByText(/logout/i).innerHTML).toBe('Logout');
     expect(getByText(/hi sara, welcome to/i).innerHTML).toBe(
       'Hi Sara, Welcome to SaverLife'
     );
