@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Navbar from '../../common/Navbar';
 import { Button, Progress } from 'antd';
+import Plot from 'react-plotly.js';
 
 import '../../../styles/Navbar.css';
 
 const RenderPastSpendingPage = props => {
+  const [spending, setSpending] = useState('');
+  // const [visual, setVisual] = useState('')
+  useEffect(() => {
+    // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/spending'
+    axios
+      .post('http://localhost:8000/data/spending', {
+        user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
+        graph_type: 'bar',
+        time_period: 'week',
+      })
+      .then(response => {
+        // console.log(response)
+
+        setSpending(response.data);
+        // setVisual(plotlyfunction(spending))
+        // console.log(spending)
+      });
+  });
   const { userInfo, authService } = props;
   return (
     <div className="pageContainer">
@@ -31,6 +51,8 @@ const RenderPastSpendingPage = props => {
 
         <div className="chartContainer">
           <h1>Container Holding Chart</h1>
+          {/* {Visual} */}
+          <Plot data={spending} />
         </div>
 
         <h1>Past Spending</h1>
