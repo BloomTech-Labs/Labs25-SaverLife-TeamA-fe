@@ -20,11 +20,12 @@ const RenderPastSpendingPage = props => {
       .then(response => {
         // console.log(response)
 
-        setSpending(response.data);
+        setSpending(JSON.parse(response.data));
         // setVisual(plotlyfunction(spending))
-        // console.log(spending)
+        console.log(spending);
+        console.log(JSON.parse(response.data));
       });
-  });
+  }, []);
   const { userInfo, authService } = props;
   return (
     <div className="pageContainer">
@@ -52,7 +53,7 @@ const RenderPastSpendingPage = props => {
         <div className="chartContainer">
           <h1>Container Holding Chart</h1>
           {/* {Visual} */}
-          <Plot data={spending} />
+          <Plot data={spending.data} layout={spending.layout} />
         </div>
 
         <h1>Past Spending</h1>
