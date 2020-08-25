@@ -13,19 +13,22 @@ const RenderPastSpendingPage = props => {
       </div>
 
       <div className="contentContainer">
-        <div className="progressDiv">
-          <Progress
-            strokeColor={{ '0%': '#ecb7db', '100%': '#c01089' }}
-            percent={50}
-            strokeWidth={16}
-          />
-        </div>
+        <h1>Past Spending</h1>
 
         <div className="chartContainer">
           <h1>Container Holding Chart</h1>
         </div>
+      </div>
 
-        <h1>Past Spending</h1>
+      <div className="topbarContainer">
+        {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
+        <Progress
+          className="progressBar"
+          strokeColor={{ '0%': '#91c2de', '100%': '#4066b0' }}
+          percent={70}
+          strokeWidth={20}
+          showInfo={false}
+        />
       </div>
     </div>
   );
