@@ -22,19 +22,11 @@ const Navbar = props => {
 
   const profileMenu = (
     <Menu>
-      <Menu.Item className="dropdownItem" key="0">
-        Profile
-      </Menu.Item>
-      <Menu.Item className="dropdownItem" key="0">
-        Options
-      </Menu.Item>
-      <Menu.Item className="dropdownItem" key="0">
-        Account Settings
-      </Menu.Item>
+      <Menu.Item key="0">Profile</Menu.Item>
+      <Menu.Item key="0">Options</Menu.Item>
+      <Menu.Item key="0">Account Settings</Menu.Item>
       <Menu.Divider />
-      <Menu.Item className="dropdownItem" onClick={() => authService.logout()}>
-        Logout
-      </Menu.Item>
+      <Menu.Item onClick={() => authService.logout()}>Logout</Menu.Item>
     </Menu>
   );
 
