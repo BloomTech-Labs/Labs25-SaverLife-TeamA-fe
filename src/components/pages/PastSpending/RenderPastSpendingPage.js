@@ -7,8 +7,12 @@ import Plot from 'react-plotly.js';
 import '../../../styles/Navbar.css';
 
 const RenderPastSpendingPage = props => {
-  const [spending, setSpending] = useState('');
-  // const [visual, setVisual] = useState('')
+  const [plot_data, setPlot_Data] = useState({});
+  const [plot_layout, setPlot_Layout] = useState({});
+  const { userInfo, authService } = props;
+  // const [moneyFlowData, setMoneyFlowData] = useState({});
+  // const [moneyFlowLayout, setMoneyFlowLayout] = useState({});
+
   useEffect(() => {
     // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/spending'
     axios
@@ -18,15 +22,21 @@ const RenderPastSpendingPage = props => {
         time_period: 'week',
       })
       .then(response => {
-        // console.log(response)
-
-        setSpending(JSON.parse(response.data));
-        // setVisual(plotlyfunction(spending))
-        console.log(spending);
-        console.log(JSON.parse(response.data));
+        setPlot_Data(JSON.parse(response.data).data);
+        setPlot_Layout(JSON.parse(response.data).layout);
       });
+    // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/moneyflow'
+    // axios
+    // .post('http://localhost:8000/data/moneyflow', {
+    //     user_ID: "1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ",
+    //     time_period: "week"
+    // })
+    // .then(response => {
+    //   moneyFlowData(JSON.parse(response.data).data);
+    //   setMoneyFlowLayout(JSON.parse(response.data).layout);
+    // });
   }, []);
-  const { userInfo, authService } = props;
+
   return (
     <div className="pageContainer">
       <div className="navContainer">
@@ -50,13 +60,11 @@ const RenderPastSpendingPage = props => {
           />
         </div>
 
-        <div className="chartContainer">
-          <h1>Container Holding Chart</h1>
-          {/* {Visual} */}
-          <Plot data={spending.data} layout={spending.layout} />
+        {/* TODO - add css class spending_chart, if needed */}
+        <div className="spending_chart">
+          <h1>Past Spending</h1>
+          <Plot data={plot_data} layout={plot_layout} />
         </div>
-
-        <h1>Past Spending</h1>
       </div>
     </div>
   );
