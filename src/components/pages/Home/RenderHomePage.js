@@ -38,15 +38,12 @@ function RenderHomePage(props) {
       </div>
 
       <div className="contentContainer">
-        <h1>Hi {userInfo.name}, Welcome to SaverLife</h1>
-        <h2>Deadline: 30 Days</h2>
-
         <div className="mainContent">
-          <div className="chartContainer">{/* {getGraphData()} */}</div>
           <h1>Current Spending</h1>
+          <div className="chartContainer">{/* {getGraphData()} */}</div>
         </div>
       </div>
-      <div className="topbarContainer">
+      <div className="progressBarContainer">
         {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
         <Progress
           className="progressBar"
