@@ -40,31 +40,28 @@ const RenderPastSpendingPage = props => {
   return (
     <div className="pageContainer">
       <div className="navContainer">
-        <Navbar />
-
-        <Button
-          type="primary"
-          onClick={() => authService.logout()}
-          className="mainButton"
-        >
-          Logout
-        </Button>
+        <Navbar authService={authService} />
       </div>
 
       <div className="contentContainer">
-        <div className="progressDiv">
-          <Progress
-            strokeColor={{ '0%': '#ecb7db', '100%': '#c01089' }}
-            percent={50}
-            strokeWidth={16}
-          />
-        </div>
+        <h1>Past Spending</h1>
 
         {/* TODO - add css class spending_chart, if needed */}
         <div className="spending_chart">
           <h1>Past Spending</h1>
           <Plot data={plot_data} layout={plot_layout} />
         </div>
+      </div>
+
+      <div className="topbarContainer">
+        {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
+        <Progress
+          className="progressBar"
+          strokeColor={{ '0%': '#91c2de', '100%': '#4066b0' }}
+          percent={70}
+          strokeWidth={20}
+          showInfo={false}
+        />
       </div>
     </div>
   );

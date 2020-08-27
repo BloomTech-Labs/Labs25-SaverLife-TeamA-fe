@@ -1,8 +1,10 @@
 import React from 'react';
+import { useOktaAuth } from '@okta/okta-react';
 import RenderPastSpendingPage from './RenderPastSpendingPage';
 
 const PastSpendingContainer = props => {
-  return <RenderPastSpendingPage />;
+  const { authService } = useOktaAuth();
+  return <RenderPastSpendingPage authService={authService} />;
 };
 
 export default PastSpendingContainer;
