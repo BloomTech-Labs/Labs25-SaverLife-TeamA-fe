@@ -36,6 +36,8 @@ function RenderHomePage(props) {
   const [futureBudget, setFutureBudget] = useState({});
   const [currentSpending, setCurrentSpending] = useState({});
 
+  // if this axios request fails, the homepage test fails
+  // keep uncommented at your own risk.
   useEffect(() => {
     // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/future_budget'
     axios
@@ -56,6 +58,7 @@ function RenderHomePage(props) {
         setCurrentSpending(JSON.parse(response.data));
       });
   }, []);
+
   return (
     <div className="pageContainer">
       <div className="navContainer">
