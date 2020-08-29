@@ -10,8 +10,6 @@ const RenderPastSpendingPage = props => {
   const [plot_data, setPlot_Data] = useState({});
   const [plot_layout, setPlot_Layout] = useState({});
   const { userInfo, authService } = props;
-  // const [moneyFlowData, setMoneyFlowData] = useState({});
-  // const [moneyFlowLayout, setMoneyFlowLayout] = useState({});
 
   useEffect(() => {
     // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/spending'
@@ -19,22 +17,12 @@ const RenderPastSpendingPage = props => {
       .post('http://localhost:8000/data/spending', {
         user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
         graph_type: 'bar',
-        time_period: 'week',
+        time_period: 'month',
       })
       .then(response => {
         setPlot_Data(JSON.parse(response.data).data);
         setPlot_Layout(JSON.parse(response.data).layout);
       });
-    // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/moneyflow'
-    // axios
-    // .post('http://localhost:8000/data/moneyflow', {
-    //     user_ID: "1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ",
-    //     time_period: "week"
-    // })
-    // .then(response => {
-    //   moneyFlowData(JSON.parse(response.data).data);
-    //   setMoneyFlowLayout(JSON.parse(response.data).layout);
-    // });
   }, []);
 
   return (

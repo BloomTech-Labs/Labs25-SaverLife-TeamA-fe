@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Plot from 'react-plotly.js';
 import { Button, Progress } from 'antd';
+import BudgetComparisonContainer from '../../BudgetComparisonContainer';
 
 import { Navbar } from '../../common/index';
 
@@ -32,10 +33,28 @@ const getGraphData = () => {
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
-
-  const [futureBudget, setFutureBudget] = useState({});
-  const [currentSpending, setCurrentSpending] = useState({});
-
+  const categoriesAmountsGoals = {
+    Rent: 1400,
+    Electric: 200,
+    Cell_Phone: 50,
+    Food: 500,
+    Gasoline: 50,
+    Entertainment: 200,
+  };
+  const categoriesAmountsCurrent = {
+    Rent: 1200,
+    Electric: 30,
+    Cell_Phone: 40,
+    Food: 470,
+    Gasoline: 28,
+    Entertainment: 90,
+  };
+  const [futureBudget, setFutureBudget] = useState(categoriesAmountsGoals);
+  const [currentSpending, setCurrentSpending] = useState(
+    categoriesAmountsCurrent
+  );
+  console.log(categoriesAmountsCurrent, categoriesAmountsGoals);
+  console.log(futureBudget, currentSpending);
   useEffect(() => {
     // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/future_budget'
     axios
@@ -45,7 +64,12 @@ function RenderHomePage(props) {
         placeholder: 'banjo',
       })
       .then(response => {
-        setFutureBudget(JSON.parse(response.data));
+        // console.log(response.data)
+        setFutureBudget(response.data);
+        console.log('request complete');
+      })
+      .catch(error => {
+        console.log(error);
       });
     // Replace with http://saverlife-a.eba-atdfhqrp.us-east-1.elasticbeanstalk.com/current_month_spending?user_id=1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ
     axios
@@ -53,7 +77,11 @@ function RenderHomePage(props) {
         'http://localhost:8000/data/current_month_spending/1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ'
       )
       .then(response => {
-        setCurrentSpending(JSON.parse(response.data));
+        // console.log(response.data)
+        setCurrentSpending(response.data);
+      })
+      .catch(error => {
+        console.log(error);
       });
   }, []);
   return (
@@ -64,12 +92,11 @@ function RenderHomePage(props) {
 
       <div className="contentContainer">
         <h1>Hi {userInfo.name}, Welcome to SaverLife</h1>
-        <h2>Deadline: 30 Days</h2>
-
-        <div className="mainContent">
-          <div className="chartContainer">{/* {getGraphData()} */}</div>
-          <h1>Current Spending</h1>
-        </div>
+        {/* <h2>Deadline: 30 Days</h2> */}
+        <BudgetComparisonContainer
+          categoryGoals={futureBudget}
+          categoryCurrent={currentSpending}
+        />
       </div>
       <div className="topbarContainer">
         {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
