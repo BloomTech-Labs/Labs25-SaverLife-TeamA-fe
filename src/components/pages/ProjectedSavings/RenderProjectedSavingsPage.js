@@ -4,6 +4,20 @@ import { Progress } from 'antd';
 
 import '../../../styles/Navbar.css';
 
+// const [moneyFlowData, setMoneyFlowData] = useState({});
+// const [moneyFlowLayout, setMoneyFlowLayout] = useState({});
+
+// Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/moneyflow'
+// axios
+// .post('http://localhost:8000/data/moneyflow', {
+//     user_ID: "1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ",
+//     time_period: "week"
+// })
+// .then(response => {
+//   moneyFlowData(JSON.parse(response.data).data);
+//   setMoneyFlowLayout(JSON.parse(response.data).layout);
+// });
+
 const RenderProjectedSavingsPage = props => {
   const { authService } = props;
   return (
