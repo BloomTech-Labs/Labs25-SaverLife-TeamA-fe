@@ -76,7 +76,7 @@ const styles = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-around',
-  height: '500px',
+  height: '70vh',
 };
 
 const buttonStyles = {

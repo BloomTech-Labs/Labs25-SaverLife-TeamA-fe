@@ -1,6 +1,8 @@
 import React from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
+import '../../../styles/Navbar.css';
+
 const EnhancedProgressBar = props => {
   const categoryName = props.entry[0];
   const categoryGoal = props.entry[1];
@@ -46,7 +48,7 @@ const headerStyles = {
 
 const styles = {
   marginBottom: '15px',
-  width: '70%',
+  width: '90%',
 };
 
 export default EnhancedProgressBar;

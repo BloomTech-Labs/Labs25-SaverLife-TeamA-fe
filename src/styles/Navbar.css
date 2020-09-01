@@ -76,7 +76,6 @@
     width: 100%;
     margin: auto;
     padding: auto 0;
-    border: 2px solid red;
 }
 
 h1, h2, h3 {
@@ -115,6 +114,10 @@ h1, h2, h3 {
 }
 
 @media (max-width: 700px) {
+    .progressHeader {
+        flex-direction: column;
+    }
+
     p {
         font-size: .5rem;
     }
