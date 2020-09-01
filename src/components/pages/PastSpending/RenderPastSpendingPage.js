@@ -36,7 +36,6 @@ const RenderPastSpendingPage = props => {
 
         {/* TODO - add css class spending_chart, if needed */}
         <div className="spending_chart">
-          <h1>Past Spending</h1>
           <Plot data={plot_data} layout={plot_layout} />
         </div>
       </div>
