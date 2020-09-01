@@ -2,11 +2,11 @@ import React from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
 const EnhancedProgressBar = props => {
-  console.log('ProgressBar Props', props);
   const categoryName = props.entry[0];
   const categoryGoal = props.entry[1];
   const categoryCurrent = props.spendingCurrent[categoryName];
   const percentFilled = (categoryCurrent / categoryGoal) * 100;
+
   const spendingStatus = () => {
     if (percentFilled < 60) {
       return 'success';
@@ -16,6 +16,7 @@ const EnhancedProgressBar = props => {
       return 'danger';
     }
   };
+
   const goalRendering = () => (props.isEditing ? '' : `$${categoryGoal}`);
   // if (!props.isEditing){
   //     return `$${categoryGoal}`
@@ -24,7 +25,6 @@ const EnhancedProgressBar = props => {
   //     return <input name={categoryName} value={categoryGoal}/>
   // }
 
-  // console.log(categoryCurrent, category)
   return (
     <div style={styles}>
       <div className="progressHeader" style={headerStyles}>

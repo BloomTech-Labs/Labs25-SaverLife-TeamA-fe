@@ -2,32 +2,6 @@
     border: 1px solid red; 
 } */
 
-@media (max-width: 800px) {
-    .navItem .test {
-        font-size: 0px;
-    }
-
-    .topbarContainer {
-        position: fixed;
-        top: 0;
-    }
-
-    .navContainer {
-        position: fixed;
-        bottom: 0;
-    }
-
-    .pageContainer {
-        flex-direction: column-reverse;
-    }
-}
-
-@media (min-width: 801px) {
-    .navContainer {
-        top: 0;
-    }
-}
-
 .topbarContainer {
     bottom: 0;
     position: fixed;
@@ -44,11 +18,11 @@
 
 .pageContainer {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
-    margin-top: 8vh;
-    margin-bottom: 8vh;
+    /* margin-top: 8vh;
+    margin-bottom: 8vh; */
 }
 
 .navContainer {
@@ -78,16 +52,17 @@
 }
 
 .contentContainer {
-    width: 80%;
-    height: 100vh;
+    width: 90%;
+    height: 84vh;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    margin-top: 8vh;
+    margin-bottom: 8vh;
 }
 
 .mainContent {
     width: 100%;
-    height: 100vh;
     margin: auto;
 }
 
@@ -106,4 +81,45 @@
 
 h1, h2, h3 {
     text-align: center;
+}
+
+@media (max-width: 800px) {
+    .navItem .test {
+        font-size: 0px;
+    }
+
+    .topbarContainer {
+        position: fixed;
+        top: 0;
+    }
+
+    .navContainer {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .pageContainer {
+        flex-direction: column-reverse;
+    }
+}
+
+.budgetComparison {
+    /* border: 2px solid black; */
+    overflow: auto;
+}
+
+@media (min-width: 801px) {
+    .navContainer {
+        top: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    p {
+        font-size: .5rem;
+    }
+
+    h6 {
+        font-size: .75rem;
+    }
 }

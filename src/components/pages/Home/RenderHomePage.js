@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Plot from 'react-plotly.js';
-import { Button, Progress } from 'antd';
-import BudgetComparisonContainer from '../../BudgetComparisonContainer';
+import { Progress } from 'antd';
+import BudgetComparisonContainer from '../../charts/BudgetComparison/BudgetComparisonContainer';
 
 import { Navbar } from '../../common/index';
 
@@ -91,12 +91,13 @@ function RenderHomePage(props) {
       </div>
 
       <div className="contentContainer">
-        <h1>Hi {userInfo.name}, Welcome to SaverLife</h1>
-        {/* <h2>Deadline: 30 Days</h2> */}
-        <BudgetComparisonContainer
-          categoryGoals={futureBudget}
-          categoryCurrent={currentSpending}
-        />
+        <h2>My Budget</h2>
+        <div className="budgetComparison">
+          <BudgetComparisonContainer
+            categoryGoals={futureBudget}
+            categoryCurrent={currentSpending}
+          />
+        </div>
       </div>
       <div className="topbarContainer">
         {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
