@@ -59,14 +59,10 @@
     height: 84vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 0 auto;
     margin-top: 8vh;
     margin-bottom: 8vh;
-}
-
-.mainContent {
-    width: 100%;
-    margin: auto;
 }
 
 .spinner-div {
@@ -79,6 +75,8 @@
 .budgetComparison {
     width: 100%;
     margin: auto;
+    padding: auto 0;
+    border: 2px solid red;
 }
 
 h1, h2, h3 {
