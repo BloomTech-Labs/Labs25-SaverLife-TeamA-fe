@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"labs25saverlifeteama437195e3": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
