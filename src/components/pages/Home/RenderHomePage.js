@@ -33,6 +33,7 @@ const getGraphData = () => {
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
+
   const categoriesAmountsGoals = {
     Rent: 1400,
     Electric: 200,
@@ -41,6 +42,7 @@ function RenderHomePage(props) {
     Gasoline: 50,
     Entertainment: 200,
   };
+
   const categoriesAmountsCurrent = {
     Rent: 1200,
     Electric: 30,
@@ -49,12 +51,16 @@ function RenderHomePage(props) {
     Gasoline: 28,
     Entertainment: 90,
   };
+
   const [futureBudget, setFutureBudget] = useState(categoriesAmountsGoals);
+
   const [currentSpending, setCurrentSpending] = useState(
     categoriesAmountsCurrent
   );
+
   console.log(categoriesAmountsCurrent, categoriesAmountsGoals);
   console.log(futureBudget, currentSpending);
+
   useEffect(() => {
     // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/future_budget'
     axios
@@ -84,20 +90,23 @@ function RenderHomePage(props) {
         console.log(error);
       });
   }, []);
+
   return (
     <div className="pageContainer">
       <div className="navContainer">
         <Navbar authService={authService} />
       </div>
+
       <div className="contentContainer">
-        <h2>My Budget</h2>
         <div className="budgetComparison">
+          <h2>My Budget</h2>
           <BudgetComparisonContainer
             categoryGoals={futureBudget}
             categoryCurrent={currentSpending}
           />
         </div>
       </div>
+
       <div className="progressBarContainer">
         {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
         <Progress
