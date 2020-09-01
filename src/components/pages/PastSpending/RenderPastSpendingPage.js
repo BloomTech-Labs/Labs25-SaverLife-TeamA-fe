@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from '../../common/Navbar';
-import { Button, Progress } from 'antd';
+import { Progress } from 'antd';
 import Plot from 'react-plotly.js';
 
 import '../../../styles/Navbar.css';
@@ -9,7 +9,7 @@ import '../../../styles/Navbar.css';
 const RenderPastSpendingPage = props => {
   const [plot_data, setPlot_Data] = useState({});
   const [plot_layout, setPlot_Layout] = useState({});
-  const { userInfo, authService } = props;
+  const { authService } = props;
 
   useEffect(() => {
     // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/spending'

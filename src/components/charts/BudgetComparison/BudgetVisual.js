@@ -36,12 +36,7 @@ const BudgetVisual = props => {
   };
   return (
     <div style={styles}>
-      <h2>My Budget</h2>
-      {/* <h5
-        style={{ marginBottom: '20px' }}
-      >{`Income: $${userIncome} | Savings: $${savingsGoalDollars}`}</h5> */}
       {Object.entries(props.categoryGoals).map(entry => {
-        // console.log(entry)
         return (
           <EnhancedProgressBar
             entry={entry}

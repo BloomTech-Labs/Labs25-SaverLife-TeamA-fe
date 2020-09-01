@@ -2,10 +2,9 @@
     border: 1px solid red; 
 } */
 
-@import url(//db.onlinewebfonts.com/c/f1a22f6f15d272c7aa56da8b2c91f5e5?family=Circular+Std+Black);
-@import url(//db.onlinewebfonts.com/c/2090551770be22b09600a40b0b4673b7?family=Avenir+Medium);
-
-.progressBarContainer {
+.topbarContainer {
+    bottom: 0;
+    position: fixed;
     width: 100%;
     height: 8vh;
     background-color: #ecb7db;
@@ -19,12 +18,15 @@
 
 .pageContainer {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
+    /* margin-top: 8vh;
+    margin-bottom: 8vh; */
 }
 
 .navContainer {
+    position: fixed;
     display: flex;
     width: 100%;
     align-items: center;
@@ -46,23 +48,21 @@
 .navItem {
     height: 8vh;
     font-size: 1rem;
-    font-family: "Avenir Medium";
     text-align: center;
 }
 
 .contentContainer {
-    width: 80%;
+    width: 90%;
     height: 84vh;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    margin-top: 8vh;
+    margin-bottom: 8vh;
 }
 
 .mainContent {
     width: 100%;
-    height: 100vh;
     margin: auto;
 }
 
@@ -75,19 +75,12 @@
 
 .chartContainer {
     width: 100%;
-    height: 80%;
+    height: 60vh;
     background-color: blue;
 }
 
 h1, h2, h3 {
-    font-family: "Circular Std Black";
-    color: #333333;
     text-align: center;
-}
-
-h1 {
-    font-size: 2rem;
-    font-weight: bold;
 }
 
 @media (max-width: 800px) {
@@ -95,7 +88,38 @@ h1 {
         font-size: 0px;
     }
 
+    .topbarContainer {
+        position: fixed;
+        top: 0;
+    }
+
+    .navContainer {
+        position: fixed;
+        bottom: 0;
+    }
+
     .pageContainer {
         flex-direction: column-reverse;
+    }
+}
+
+.budgetComparison {
+    /* border: 2px solid black; */
+    overflow: auto;
+}
+
+@media (min-width: 801px) {
+    .navContainer {
+        top: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    p {
+        font-size: .5rem;
+    }
+
+    h6 {
+        font-size: .75rem;
     }
 }
