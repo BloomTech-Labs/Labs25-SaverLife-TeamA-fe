@@ -5,6 +5,10 @@
 @import url(//db.onlinewebfonts.com/c/f1a22f6f15d272c7aa56da8b2c91f5e5?family=Circular+Std+Black);
 @import url(//db.onlinewebfonts.com/c/2090551770be22b09600a40b0b4673b7?family=Avenir+Medium);
 
+* {
+    box-sizing: border-box;
+}
+
 .progressBarContainer {
     bottom: 0;
     position: fixed;
@@ -109,6 +113,22 @@ h6 {
 
 .progressButton {
     margin: '10px 0',
+}
+
+/* Past Spending Page */
+.spending_chart {
+    border: 1px solid red;
+    box-sizing: border-box;
+    text-align: center;
+    width: 80%;
+    height: 70vh;
+    margin: 2.5vh auto;
+}
+
+.spending_graph {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid red;
 }
 
 @media (max-width: 800px) {

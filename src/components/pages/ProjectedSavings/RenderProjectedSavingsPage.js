@@ -30,8 +30,10 @@ const RenderProjectedSavingsPage = props => {
       </div>
 
       <div className="contentContainer">
-        <h1>Projected Savings</h1>
-        <Plot data={moneyFlowData} layout={moneyFlowLayout} />
+        <h2 className="pageHeader">Projected Savings</h2>
+        <div className="spending_chart">
+          <Plot data={moneyFlowData} layout={moneyFlowLayout} />
+        </div>
       </div>
 
       <div className="progressBarContainer">
