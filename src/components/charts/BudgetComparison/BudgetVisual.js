@@ -36,12 +36,7 @@ const BudgetVisual = props => {
   };
   return (
     <div style={styles}>
-      <h2>My Budget</h2>
-      {/* <h5
-        style={{ marginBottom: '20px' }}
-      >{`Income: $${userIncome} | Savings: $${savingsGoalDollars}`}</h5> */}
       {Object.entries(props.categoryGoals).map(entry => {
-        // console.log(entry)
         return (
           <EnhancedProgressBar
             entry={entry}
@@ -56,7 +51,7 @@ const BudgetVisual = props => {
       })}
       {isEditing ? (
         <Button
-          style={buttonStyles}
+          className="progressButton"
           variant="dark"
           onClick={() => setIsEditing(!isEditing)}
         >
@@ -64,7 +59,7 @@ const BudgetVisual = props => {
         </Button>
       ) : (
         <Button
-          style={buttonStyles}
+          className="progressButton"
           variant="info"
           onClick={() => saveChanges()}
         >
@@ -81,11 +76,7 @@ const styles = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-around',
-  height: '500px',
-};
-
-const buttonStyles = {
-  margin: '30px 0',
+  height: '70vh',
 };
 
 export default BudgetVisual;
