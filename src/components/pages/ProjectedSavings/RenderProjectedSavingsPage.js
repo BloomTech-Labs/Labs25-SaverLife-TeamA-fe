@@ -1,25 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Navbar from '../../common/Navbar';
 import { Progress } from 'antd';
+import Plot from 'react-plotly.js';
 
 import '../../../styles/Navbar.css';
 
-// const [moneyFlowData, setMoneyFlowData] = useState({});
-// const [moneyFlowLayout, setMoneyFlowLayout] = useState({});
-
-// Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/moneyflow'
-// axios
-// .post('http://localhost:8000/data/moneyflow', {
-//     user_ID: "1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ",
-//     time_period: "week"
-// })
-// .then(response => {
-//   moneyFlowData(JSON.parse(response.data).data);
-//   setMoneyFlowLayout(JSON.parse(response.data).layout);
-// });
-
 const RenderProjectedSavingsPage = props => {
-  const { authService } = props;
+  const [moneyFlowData, setMoneyFlowData] = useState({});
+  const [moneyFlowLayout, setMoneyFlowLayout] = useState({});
+
+  // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/moneyflow'
+  useEffect(() => {
+    axios
+      .post('http://localhost:8000/data/moneyflow', {
+        user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
+        time_period: 'week',
+      })
+      .then(response => {
+        setMoneyFlowData(JSON.parse(response.data).data);
+        setMoneyFlowLayout(JSON.parse(response.data).layout);
+      });
+  }, []);
+  const { userInfo, authService } = props;
   return (
     <div className="pageContainer">
       <div className="navContainer">
@@ -27,11 +30,8 @@ const RenderProjectedSavingsPage = props => {
       </div>
 
       <div className="contentContainer">
-        <h1>Projected Savings</h1>
-        <img
-          src="https://www.smartsheet.com/sites/default/files/ic-line-charts-excel-single-line-graph-created.png"
-          alt="line graph stuff"
-        />
+        <h2>Projected Savings</h2>
+        <Plot data={moneyFlowData} layout={moneyFlowLayout} />
       </div>
 
       <div className="progressBarContainer">
