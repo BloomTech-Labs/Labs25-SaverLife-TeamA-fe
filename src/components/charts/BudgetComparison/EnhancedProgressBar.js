@@ -28,27 +28,18 @@ const EnhancedProgressBar = props => {
   // }
 
   return (
-    <div style={styles}>
-      <div className="progressHeader" style={headerStyles}>
+    <div className="individualBar">
+      <div className="progressHeader">
         <h6>{categoryName}</h6>
-        <p>{`Spent: $${(categoryCurrent + 0).toFixed(2)} | Remaining: $${(
-          categoryGoal - categoryCurrent
-        ).toFixed(2)} | Goal: ${goalRendering()}`}</p>
+        <p className="progressP">{`Spent: $${(categoryCurrent + 0).toFixed(
+          2
+        )} | Remaining: $${(categoryGoal - categoryCurrent).toFixed(
+          2
+        )} | Goal: ${goalRendering()}`}</p>
       </div>
       <ProgressBar striped variant={spendingStatus()} now={percentFilled} />
     </div>
   );
-};
-const headerStyles = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  flexDirection: 'row',
-  marginBottom: -10,
-};
-
-const styles = {
-  marginBottom: '15px',
-  width: '90%',
 };
 
 export default EnhancedProgressBar;
