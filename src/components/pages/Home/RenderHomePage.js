@@ -89,7 +89,6 @@ function RenderHomePage(props) {
       <div className="navContainer">
         <Navbar authService={authService} />
       </div>
-
       <div className="contentContainer">
         <h1>Hi {userInfo.name}, Welcome to SaverLife</h1>
         {/* <h2>Deadline: 30 Days</h2> */}
@@ -98,7 +97,7 @@ function RenderHomePage(props) {
           categoryCurrent={currentSpending}
         />
       </div>
-      <div className="topbarContainer">
+      <div className="progressBarContainer">
         {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
         <Progress
           className="progressBar"

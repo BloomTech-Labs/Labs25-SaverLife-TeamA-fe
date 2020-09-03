@@ -34,7 +34,7 @@ const RenderProjectedSavingsPage = props => {
         <Plot data={moneyFlowData} layout={moneyFlowLayout} />
       </div>
 
-      <div className="topbarContainer">
+      <div className="progressBarContainer">
         {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
         <Progress
           className="progressBar"
