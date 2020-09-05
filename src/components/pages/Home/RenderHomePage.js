@@ -1,102 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Plot from 'react-plotly.js';
-import { Button, Progress } from 'antd';
-import BudgetComparisonContainer from '../../BudgetComparisonContainer';
+import React, { useEffect } from 'react';
+import { Progress } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { getBudgetAction } from '../../../actionCreators/mainActions.js';
+import BudgetComparisonContainer from '../../charts/BudgetComparison/BudgetComparisonContainer';
 import { Navbar } from '../../common/index';
-
 import '../../../styles/Navbar.css';
-
-// CORS issue, can't continue working on this till fixed.
-const getGraphData = () => {
-  const userData = {
-    user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
-    graph_type: 'pie',
-    time_period: 'week',
-  };
-
-  let data;
-
-  axios
-    .post(
-      'http://saverlife-a.eba-atdfhqrp.us-east-1.elasticbeanstalk.com/spending',
-      userData
-    )
-    .then(res => {
-      data = JSON.parse(res.data);
-      console.log(data);
-    });
-
-  return <Plot data={data.data} layout={data.layout} />;
-};
 
 function RenderHomePage(props) {
   const { userInfo, authService } = props;
-  const categoriesAmountsGoals = {
-    Rent: 1400,
-    Electric: 200,
-    Cell_Phone: 50,
-    Food: 500,
-    Gasoline: 50,
-    Entertainment: 200,
-  };
-  const categoriesAmountsCurrent = {
-    Rent: 1200,
-    Electric: 30,
-    Cell_Phone: 40,
-    Food: 470,
-    Gasoline: 28,
-    Entertainment: 90,
-  };
-  const [futureBudget, setFutureBudget] = useState(categoriesAmountsGoals);
-  const [currentSpending, setCurrentSpending] = useState(
-    categoriesAmountsCurrent
+
+  const dispatch = useDispatch();
+  const futureBudget = useSelector(state => state.futureBudget);
+  const currentMonthlySpending = useSelector(
+    state => state.currentMonthlySpending
   );
-  console.log(categoriesAmountsCurrent, categoriesAmountsGoals);
-  console.log(futureBudget, currentSpending);
+
   useEffect(() => {
-    // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/future_budget'
-    axios
-      .post('http://localhost:8000/data/future_budget', {
-        user_id: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
-        monthly_savings_goal: 50,
-        placeholder: 'banjo',
-      })
-      .then(response => {
-        // console.log(response.data)
-        setFutureBudget(response.data);
-        console.log('request complete');
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    // Replace with http://saverlife-a.eba-atdfhqrp.us-east-1.elasticbeanstalk.com/current_month_spending?user_id=1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ
-    axios
-      .get(
-        'http://localhost:8000/data/current_month_spending/1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ'
-      )
-      .then(response => {
-        // console.log(response.data)
-        setCurrentSpending(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    dispatch(getBudgetAction());
   }, []);
+
   return (
     <div className="pageContainer">
       <div className="navContainer">
         <Navbar authService={authService} />
       </div>
       <div className="contentContainer">
-        <h1>Hi {userInfo.name}, Welcome to SaverLife</h1>
-        {/* <h2>Deadline: 30 Days</h2> */}
-        <BudgetComparisonContainer
-          categoryGoals={futureBudget}
-          categoryCurrent={currentSpending}
-        />
+        <h2 className="pageHeader">My Budget</h2>
+        <div className="budgetComparison">
+          <BudgetComparisonContainer
+            categoryGoals={futureBudget}
+            categoryCurrent={currentMonthlySpending}
+          />
+        </div>
       </div>
+
       <div className="progressBarContainer">
         {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
         <Progress

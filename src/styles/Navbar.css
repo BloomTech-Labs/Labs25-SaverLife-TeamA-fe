@@ -6,6 +6,8 @@
 @import url(//db.onlinewebfonts.com/c/2090551770be22b09600a40b0b4673b7?family=Avenir+Medium);
 
 .progressBarContainer {
+    bottom: 0;
+    position: fixed;
     width: 100%;
     height: 8vh;
     background-color: #ecb7db;
@@ -19,12 +21,15 @@
 
 .pageContainer {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
+    /* margin-top: 8vh;
+    margin-bottom: 8vh; */
 }
 
 .navContainer {
+    position: fixed;
     display: flex;
     width: 100%;
     align-items: center;
@@ -46,24 +51,18 @@
 .navItem {
     height: 8vh;
     font-size: 1rem;
-    font-family: "Avenir Medium";
     text-align: center;
 }
 
 .contentContainer {
-    width: 80%;
+    width: 90%;
     height: 84vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 0 auto;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-}
-
-.mainContent {
-    width: 100%;
-    height: 100vh;
-    margin: auto;
+    margin-top: 8vh;
+    margin-bottom: 8vh;
 }
 
 .spinner-div {
@@ -73,21 +72,43 @@
     margin-top: 45vh;
 }
 
-.chartContainer {
+.budgetComparison {
     width: 100%;
-    height: 80%;
-    background-color: blue;
+    /* margin: auto; */
+    /* padding: 10px 0; */
+    overflow: auto;
 }
 
 h1, h2, h3 {
-    font-family: "Circular Std Black";
-    color: #333333;
     text-align: center;
 }
 
-h1 {
-    font-size: 2rem;
-    font-weight: bold;
+h6 {
+    margin-bottom: -5px;
+}
+
+.pageHeader {
+    margin-top: 2.5vh;
+}
+
+.individualBar {
+    margin-bottom: 15px;
+    width: 90%;
+}
+
+.progressHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.progressP {
+    line-height: 1.25rem;
+    margin-bottom: 0;
+}
+
+.progressButton {
+    margin: '10px 0',
 }
 
 @media (max-width: 800px) {
@@ -95,7 +116,50 @@ h1 {
         font-size: 0px;
     }
 
+    .progressBarContainer {
+        position: fixed;
+        top: 0;
+    }
+
+    .navContainer {
+        position: fixed;
+        bottom: 0;
+    }
+
     .pageContainer {
         flex-direction: column-reverse;
     }
+}
+
+
+@media (min-width: 801px) {
+    .navContainer {
+        top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    p {
+        font-size: .75rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .progressHeader {
+        flex-direction: column;
+    }
+
+    .progressButton {
+        font-size: .75rem;
+        margin: 0;
+    }
+
+    p {
+        font-size: .5rem
+    }
+
+    h6 {
+        font-size: .75rem
+    }    
 }

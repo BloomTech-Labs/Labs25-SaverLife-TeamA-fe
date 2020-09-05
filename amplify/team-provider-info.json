@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-labs25saverlifeteama-dev-171338-authRole",
+            "UnauthRoleArn": "arn:aws:iam::156380185444:role/amplify-labs25saverlifeteama-dev-171338-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::156380185444:role/amplify-labs25saverlifeteama-dev-171338-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-labs25saverlifeteama-dev-171338-deployment",
+            "UnauthRoleName": "amplify-labs25saverlifeteama-dev-171338-unauthRole",
+            "StackName": "amplify-labs25saverlifeteama-dev-171338",
+            "StackId": "arn:aws:cloudformation:us-east-1:156380185444:stack/amplify-labs25saverlifeteama-dev-171338/01374bb0-e27a-11ea-87f4-12275bc6e1ef",
+            "AmplifyAppId": "d3rb45pv1xfg8q"
+        },
+        "categories": {
+            "auth": {
+                "labs25saverlifeteama437195e3": {}
+            }
+        }
+    }
+}

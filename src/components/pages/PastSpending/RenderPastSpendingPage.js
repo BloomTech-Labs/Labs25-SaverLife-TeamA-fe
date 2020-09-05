@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import Navbar from '../../common/Navbar';
-import { Button, Progress } from 'antd';
+import { Progress } from 'antd';
 import Plot from 'react-plotly.js';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  getSpendingBarAction,
+  getSpendingDonutAction,
+} from '../../../actionCreators/mainActions.js';
 
 import '../../../styles/Navbar.css';
 
 const RenderPastSpendingPage = props => {
-  const [plot_data, setPlot_Data] = useState({});
-  const [plot_layout, setPlot_Layout] = useState({});
-  const { userInfo, authService } = props;
+  const { authService } = props;
+
+  const dispatch = useDispatch();
+  const spendingBarData = useSelector(state => state.data.spendingBar);
+  const spendingBarLayout = useSelector(state => state.layout.spendingBar);
+  const spendingDonutData = useSelector(state => state.data.spendingDonut);
+  const spendingDonutLayout = useSelector(state => state.layout.spendingDonut);
 
   useEffect(() => {
-    // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/spending'
-    axios
-      .post('http://localhost:8000/data/spending', {
-        user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
-        graph_type: 'bar',
-        time_period: 'month',
-      })
-      .then(response => {
-        setPlot_Data(JSON.parse(response.data).data);
-        setPlot_Layout(JSON.parse(response.data).layout);
-      });
+    dispatch(getSpendingBarAction());
+    dispatch(getSpendingDonutAction());
   }, []);
 
   return (
@@ -32,12 +32,12 @@ const RenderPastSpendingPage = props => {
       </div>
 
       <div className="contentContainer">
-        <h1>Past Spending</h1>
+        {/* <h1>Past Spending</h1> */}
 
         {/* TODO - add css class spending_chart, if needed */}
         <div className="spending_chart">
-          <h1>Past Spending</h1>
-          <Plot data={plot_data} layout={plot_layout} />
+          <Plot data={spendingBarData} layout={spendingBarLayout} />
+          <Plot data={spendingDonutData} layout={spendingDonutLayout} />
         </div>
       </div>
 

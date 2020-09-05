@@ -1,26 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import Navbar from '../../common/Navbar';
 import { Progress } from 'antd';
 import Plot from 'react-plotly.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { getNetIncomeAction } from '../../../actionCreators/mainActions.js';
 
 import '../../../styles/Navbar.css';
 
 const RenderProjectedSavingsPage = props => {
-  const [moneyFlowData, setMoneyFlowData] = useState({});
-  const [moneyFlowLayout, setMoneyFlowLayout] = useState({});
-
-  // Replace localhost:8000 link with 'http://saverlife-a-api.herokuapp.com/data/moneyflow'
+  const netIncomeData = useSelector(state => state.data.netIncome);
+  const netIncomeLayout = useSelector(state => state.layout.netIncome);
+  const dispatch = useDispatch();
   useEffect(() => {
-    axios
-      .post('http://localhost:8000/data/moneyflow', {
-        user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
-        time_period: 'week',
-      })
-      .then(response => {
-        setMoneyFlowData(JSON.parse(response.data).data);
-        setMoneyFlowLayout(JSON.parse(response.data).layout);
-      });
+    dispatch(getNetIncomeAction());
   }, []);
   const { userInfo, authService } = props;
   return (
@@ -30,8 +23,8 @@ const RenderProjectedSavingsPage = props => {
       </div>
 
       <div className="contentContainer">
-        <h1>Projected Savings</h1>
-        <Plot data={moneyFlowData} layout={moneyFlowLayout} />
+        {/* <h1>Projected Savings</h1> */}
+        <Plot data={netIncomeData} layout={netIncomeLayout} />
       </div>
 
       <div className="progressBarContainer">
