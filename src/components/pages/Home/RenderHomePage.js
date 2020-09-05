@@ -15,7 +15,6 @@ function RenderHomePage(props) {
   const currentMonthlySpending = useSelector(
     state => state.currentMonthlySpending
   );
-
   useEffect(() => {
     dispatch(getBudgetAction());
   }, []);
@@ -25,6 +24,7 @@ function RenderHomePage(props) {
       <div className="navContainer">
         <Navbar authService={authService} />
       </div>
+
       <div className="contentContainer">
         <h2 className="pageHeader">My Budget</h2>
         <div className="budgetComparison">
