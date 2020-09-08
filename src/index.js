@@ -7,6 +7,10 @@ import {
   Switch,
 } from 'react-router-dom';
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
 import 'antd/dist/antd.less';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,13 +23,18 @@ import { PastSpendingPage } from './components/pages/PastSpending';
 import { ProjectedSavingsPage } from './components/pages/ProjectedSavings';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
+import { mainReducer } from './reducers/mainReducer';
+
+const store = createStore(mainReducer, applyMiddleware(logger, thunk));
 
 ReactDOM.render(
-  <Router>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 

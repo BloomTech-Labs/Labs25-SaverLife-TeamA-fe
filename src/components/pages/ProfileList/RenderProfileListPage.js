@@ -1,22 +1,29 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Progress } from 'antd';
+import Plot from 'react-plotly.js';
 
-const RenderProfileListPage = props => (
-  <div>
-    <p>
-      <Link to="/">Home</Link>
-    </p>
-    {props.data.map(item => (
-      <figure key={item.id}>
-        <img src={item.avatarUrl} alt={item.name} />
-        <figcaption>
-          <h3>{item.name}</h3>
-        </figcaption>
-      </figure>
-    ))}
-  </div>
-);
+import Navbar from '../../common/Navbar';
+
+const RenderProfileListPage = props => {
+  return (
+    <div>
+      <p>
+        <Link to="/">Home</Link>
+      </p>
+      {props.data.map(item => (
+        <figure key={item.id}>
+          <img src={item.avatarUrl} alt={item.name} />
+          <figcaption>
+            <h3>{item.name}</h3>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+};
 
 export default RenderProfileListPage;
 
