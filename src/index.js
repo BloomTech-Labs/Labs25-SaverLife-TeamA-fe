@@ -15,7 +15,7 @@ import { NotFoundPage } from './components/pages/NotFound';
 import { LoginPage } from './components/pages/Login';
 import { HomePage } from './components/pages/Home';
 import { PastSpendingPage } from './components/pages/PastSpending';
-import { ProjectedSavingsPage } from './components/pages/ProjectedSavings';
+import { NetIncomePage } from './components/pages/NetIncome';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
 
@@ -51,10 +51,7 @@ function App() {
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
         <SecureRoute path="/past-spending" component={PastSpendingPage} />
-        <SecureRoute
-          path="/projected-savings"
-          component={ProjectedSavingsPage}
-        />
+        <SecureRoute path="/net-income" component={NetIncomePage} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>

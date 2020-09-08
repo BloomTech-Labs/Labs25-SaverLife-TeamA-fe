@@ -68,8 +68,8 @@ const Navbar = props => {
         icon={<LineChartOutlined />}
         className="navItem"
       >
-        <Link to="/projected-savings" className="test">
-          Projected Savings
+        <Link to="/net-income" className="test">
+          Net Income
         </Link>
       </Menu.Item>
 

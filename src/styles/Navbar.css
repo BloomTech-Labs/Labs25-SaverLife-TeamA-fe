@@ -67,6 +67,7 @@
     margin: 0 auto;
     margin-top: 8vh;
     margin-bottom: 8vh;
+    z-index: -1;
 }
 
 .spinner-div {
@@ -104,6 +105,8 @@ h6 {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 1vh;
 }
 
 .progressP {
@@ -112,23 +115,32 @@ h6 {
 }
 
 .progressButton {
-    margin: '10px 0',
+    margin: '10px 0';
 }
 
 /* Past Spending Page */
 .spending_chart {
-    border: 1px solid red;
     box-sizing: border-box;
     text-align: center;
-    width: 80%;
-    height: 70vh;
     margin: 2.5vh auto;
 }
 
-.spending_graph {
-    width: 100%;
-    height: 100vh;
-    border: 1px solid red;
+@media (min-width: 1000px) {
+    p {
+        font-size: 1.5rem;
+    }
+
+    h6 {
+        font-size: 2rem;
+    }
+
+    .progress {
+        height: 2rem;
+    }
+
+    .progressButton {
+        font-size: 1.25rem;
+    }
 }
 
 @media (max-width: 800px) {

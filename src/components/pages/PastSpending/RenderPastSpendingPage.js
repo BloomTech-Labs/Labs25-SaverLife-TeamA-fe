@@ -22,7 +22,11 @@ const RenderPastSpendingPage = props => {
       .then(response => {
         const plotLayout = JSON.parse(response.data).layout;
         setPlot_Data(JSON.parse(response.data).data);
-        setPlot_Layout(plotLayout);
+        setPlot_Layout({
+          ...plotLayout,
+          width: window.innerWidth - 100,
+          height: window.innerHeight - 200,
+        });
       });
   }, []);
 
@@ -33,8 +37,6 @@ const RenderPastSpendingPage = props => {
       </div>
 
       <div className="contentContainer">
-        <h2 className="pageHeader">Past Spending</h2>
-
         {/* TODO: add css class spending_chart, if needed */}
         <div className="spending_chart">
           <Plot

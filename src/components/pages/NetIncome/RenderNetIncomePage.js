@@ -6,7 +6,7 @@ import Plot from 'react-plotly.js';
 
 import '../../../styles/Navbar.css';
 
-const RenderProjectedSavingsPage = props => {
+const RenderNetIncomePage = props => {
   const [moneyFlowData, setMoneyFlowData] = useState({});
   const [moneyFlowLayout, setMoneyFlowLayout] = useState({});
 
@@ -18,8 +18,13 @@ const RenderProjectedSavingsPage = props => {
         time_period: 'week',
       })
       .then(response => {
+        const moneyFlowLayout = JSON.parse(response.data).layout;
         setMoneyFlowData(JSON.parse(response.data).data);
-        setMoneyFlowLayout(JSON.parse(response.data).layout);
+        setMoneyFlowLayout({
+          ...moneyFlowLayout,
+          width: window.innerWidth - 100,
+          height: window.innerHeight - 200,
+        });
       });
   }, []);
   const { userInfo, authService } = props;
@@ -30,7 +35,6 @@ const RenderProjectedSavingsPage = props => {
       </div>
 
       <div className="contentContainer">
-        <h2 className="pageHeader">Projected Savings</h2>
         <div className="spending_chart">
           <Plot data={moneyFlowData} layout={moneyFlowLayout} />
         </div>
@@ -50,4 +54,4 @@ const RenderProjectedSavingsPage = props => {
   );
 };
 
-export default RenderProjectedSavingsPage;
+export default RenderNetIncomePage;
