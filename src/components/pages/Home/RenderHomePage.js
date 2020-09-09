@@ -9,7 +9,7 @@ import { Navbar } from '../../common/index';
 import '../../../styles/Navbar.css';
 
 function RenderHomePage(props) {
-  const { userInfo, authService } = props;
+  const { authService } = props;
 
   const dispatch = useDispatch();
   const futureBudget = useSelector(state => state.futureBudget);
@@ -18,7 +18,7 @@ function RenderHomePage(props) {
   );
   useEffect(() => {
     dispatch(getBudgetAction());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="pageContainer">

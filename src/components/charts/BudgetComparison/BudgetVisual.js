@@ -1,6 +1,5 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-
 import EnhancedProgressBar from './EnhancedProgressBar';
 
 // const traces = categories_amounts.map(category => {

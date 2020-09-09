@@ -10,8 +10,6 @@ import {
 import '../../styles/Navbar.css';
 
 const Navbar = props => {
-  const { authService } = props;
-
   return (
     <nav className="navBar">
       <div className="logo">
