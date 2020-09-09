@@ -49,7 +49,7 @@ const BudgetVisual = props => {
           />
         );
       })}
-      {isEditing ? (
+      {/* {isEditing ? (
         <Button
           className="progressButton"
           variant="dark"
@@ -65,7 +65,7 @@ const BudgetVisual = props => {
         >
           Edit Spending Goals
         </Button>
-      )}
+      )} */}
     </div>
   );
 };

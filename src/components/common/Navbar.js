@@ -74,11 +74,11 @@ const Navbar = props => {
           </a>
         </li>
       </ol>
-      <div className="navItem">
+      {/* <div className="navItem">
         <button className="logOutButton" onClick={() => authService.logout()}>
           Log Out
         </button>
-      </div>
+      </div> */}
     </nav>
   );
 };

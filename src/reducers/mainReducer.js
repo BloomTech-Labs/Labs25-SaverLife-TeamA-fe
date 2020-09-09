@@ -49,7 +49,13 @@ export const mainReducer = (state = initialState, action) => {
         },
         layout: {
           ...state.layout,
-          spendingDonut: action.layout,
+          spendingDonut: {
+            ...action.layout,
+            width: 475,
+            height: 475,
+            title: '',
+            legend: { x: 0.25, y: 0.25 },
+          },
         },
       };
     case GET_NET_INCOME:

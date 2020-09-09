@@ -37,7 +37,7 @@ const EnhancedProgressBar = props => {
           2
         )} | Goal: ${goalRendering()}`}</p>
       </div>
-      <ProgressBar striped variant={spendingStatus()} now={percentFilled} />
+      <ProgressBar variant={spendingStatus()} now={percentFilled} />
     </div>
   );
 };
