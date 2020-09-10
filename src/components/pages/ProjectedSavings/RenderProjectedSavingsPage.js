@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import Navbar from '../../common/Navbar';
-import { Progress } from 'antd';
+import { Navbar, GoalProgressBar } from '../../common/index';
 import Plot from 'react-plotly.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNetIncomeAction } from '../../../actionCreators/mainActions.js';
@@ -46,7 +45,6 @@ const RenderProjectedSavingsPage = props => {
       </div>
 
       <div className="contentContainer">
-        {/* <h1>Projected Savings</h1> */}
         <Plot
           data={netIncomeData}
           layout={{ ...netIncomeLayout, ...dimensions }}
@@ -55,14 +53,7 @@ const RenderProjectedSavingsPage = props => {
       </div>
 
       <div className="progressBarContainer">
-        {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
-        <Progress
-          className="progressBar"
-          strokeColor={{ '0%': '#ecb7db', '100%': '#c01089' }}
-          percent={70}
-          strokeWidth={20}
-          showInfo={false}
-        />
+        <GoalProgressBar />
       </div>
     </div>
   );

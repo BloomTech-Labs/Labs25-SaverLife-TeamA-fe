@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Navbar from '../../common/Navbar';
+import { Navbar, GoalProgressBar } from '../../common/index';
 import { Input } from 'antd';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +12,6 @@ import {
   setUserPassword,
 } from '../../../actionCreators/mainActions.js';
 
-import { Progress } from 'antd';
 import '../../../styles/App.scss';
 
 const RenderProfilePage = props => {
@@ -116,14 +115,7 @@ const RenderProfilePage = props => {
       </div>
 
       <div className="progressBarContainer">
-        {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
-        <Progress
-          className="progressBar"
-          strokeColor={{ '0%': '#ecb7db', '100%': '#c01089' }}
-          percent={70}
-          strokeWidth={20}
-          showInfo={false}
-        />
+        <GoalProgressBar />
       </div>
     </div>
   );
