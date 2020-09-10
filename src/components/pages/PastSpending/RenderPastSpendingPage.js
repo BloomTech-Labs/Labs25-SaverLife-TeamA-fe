@@ -9,7 +9,7 @@ import {
   getSpendingDonutAction,
 } from '../../../actionCreators/mainActions.js';
 
-import '../../../styles/App.css';
+import '../../../styles/App.scss';
 
 const RenderPastSpendingPage = props => {
   const { authService } = props;

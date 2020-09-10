@@ -1,7 +1,7 @@
 import React from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
-import '../../../styles/App.css';
+import '../../../styles/App.scss';
 
 const EnhancedProgressBar = props => {
   const categoryName = props.entry[0];
@@ -37,7 +37,11 @@ const EnhancedProgressBar = props => {
           2
         )} | Goal: ${goalRendering()}`}</p>
       </div>
-      <ProgressBar variant={spendingStatus()} now={percentFilled} />
+      <ProgressBar
+        className="budgetBar"
+        variant={spendingStatus()}
+        now={percentFilled}
+      />
     </div>
   );
 };

@@ -13,7 +13,7 @@ import {
 } from '../../../actionCreators/mainActions.js';
 
 import { Progress } from 'antd';
-import '../../../styles/App.css';
+import '../../../styles/App.scss';
 
 const RenderProfilePage = props => {
   const { authService } = props;

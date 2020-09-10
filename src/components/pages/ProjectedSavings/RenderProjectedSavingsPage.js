@@ -6,7 +6,7 @@ import Plot from 'react-plotly.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNetIncomeAction } from '../../../actionCreators/mainActions.js';
 
-import '../../../styles/App.css';
+import '../../../styles/App.scss';
 
 const RenderProjectedSavingsPage = props => {
   const netIncomeData = useSelector(state => state.data.netIncome);

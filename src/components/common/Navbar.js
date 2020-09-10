@@ -8,7 +8,7 @@ import {
   PieChartOutlined,
 } from '@ant-design/icons';
 
-import '../../styles/App.css';
+import '../../styles/App.scss';
 
 const Navbar = props => {
   return (

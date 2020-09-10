@@ -13,7 +13,6 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 import 'antd/dist/antd.less';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { NotFoundPage } from './components/pages/NotFound';
 import { ProfilePage } from './components/pages/Profile';
