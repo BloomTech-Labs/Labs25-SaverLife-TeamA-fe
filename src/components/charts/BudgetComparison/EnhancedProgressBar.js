@@ -1,7 +1,7 @@
 import React from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
-import '../../../styles/Navbar.css';
+import '../../../styles/App.css';
 
 const EnhancedProgressBar = props => {
   const categoryName = props.entry[0];

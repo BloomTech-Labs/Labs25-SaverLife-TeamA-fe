@@ -16,7 +16,7 @@ import 'antd/dist/antd.less';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { NotFoundPage } from './components/pages/NotFound';
-import { ProfileListPage } from './components/pages/ProfileList';
+import { ProfilePage } from './components/pages/Profile';
 import { LoginPage } from './components/pages/Login';
 import { HomePage } from './components/pages/Home';
 import { PastSpendingPage } from './components/pages/PastSpending';
@@ -71,7 +71,7 @@ function App() {
           path="/projected-savings"
           component={ProjectedSavingsPage}
         />
-        <SecureRoute path="/profile-list" component={ProfileListPage} />
+        <SecureRoute path="/my-account" component={ProfilePage} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>

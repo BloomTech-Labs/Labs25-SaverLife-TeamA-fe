@@ -9,7 +9,7 @@ import {
   getSpendingDonutAction,
 } from '../../../actionCreators/mainActions.js';
 
-import '../../../styles/Navbar.css';
+import '../../../styles/App.css';
 
 const RenderPastSpendingPage = props => {
   const { authService } = props;
@@ -19,10 +19,12 @@ const RenderPastSpendingPage = props => {
   let spendingBarLayout = useSelector(state => state.layout.spendingBar);
   const spendingDonutData = useSelector(state => state.data.spendingDonut);
   const spendingDonutLayout = useSelector(state => state.layout.spendingDonut);
+
   let width =
     window.innerWidth < 800 ? window.innerWidth : window.innerWidth * 0.8;
   let height = window.innerHeight * 0.7;
   let size = window.innerWidth < 800 ? 10 : 15;
+
   const [dimensions, setDimensions] = useState({
     width,
     height,
@@ -60,7 +62,7 @@ const RenderPastSpendingPage = props => {
             layout={{ ...spendingBarLayout, ...dimensions }}
           />
         </div>
-        <div className="spendingChart">
+        <div className="spendingChart donutChart">
           <Plot
             data={spendingDonutData}
             config={{ displayModeBar: false }}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   UserOutlined,
   HomeOutlined,
@@ -7,7 +8,7 @@ import {
   PieChartOutlined,
 } from '@ant-design/icons';
 
-import '../../styles/Navbar.css';
+import '../../styles/App.css';
 
 const Navbar = props => {
   return (
@@ -20,63 +21,58 @@ const Navbar = props => {
       </div>
       <ol className="navBarList">
         <li className={props.home ? 'navItem navItemActive' : 'navItem'}>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li className={props.home ? 'navIcon navItemActive' : 'navIcon'}>
-          <a href="/">
+          <Link to="/">
             <HomeOutlined />
-          </a>
+          </Link>
         </li>
         <li
           className={props.pastSpending ? 'navItem navItemActive' : 'navItem'}
         >
-          <a href="/past-spending">Past Spending</a>
+          <Link to="/past-spending">Past Spending</Link>
         </li>
         <li
           className={props.pastSpending ? 'navIcon navItemActive' : 'navIcon'}
         >
-          <a href="/past-spending">
+          <Link to="/past-spending">
             <BarChartOutlined />
-          </a>
+          </Link>
         </li>
         <li className="navItem">
-          <a href="/">Budget Comparison</a>
+          <Link to="/">Budget Comparison</Link>
         </li>
         <li className="navIcon">
-          <a href="/">
+          <Link to="/">
             <PieChartOutlined />
-          </a>
+          </Link>
         </li>
         <li
           className={
             props.projectedSavings ? 'navItem navItemActive' : 'navItem'
           }
         >
-          <a href="/projected-savings">Projected Savings</a>
+          <Link to="/projected-savings">Projected Savings</Link>
         </li>
         <li
           className={
             props.projectedSavings ? 'navIcon navItemActive' : 'navIcon'
           }
         >
-          <a href="/projected-savings">
+          <Link to="/projected-savings">
             <LineChartOutlined />
-          </a>
+          </Link>
         </li>
-        <li className="navItem">
-          <a href="/">My Account</a>
+        <li className={props.myAccount ? 'navItem navItemActive' : 'navItem'}>
+          <Link to="/my-account">My Account</Link>
         </li>
-        <li className="navIcon">
-          <a href="/">
+        <li className={props.myAccount ? 'navIcon navItemActive' : 'navIcon'}>
+          <Link to="/my-account">
             <UserOutlined />
-          </a>
+          </Link>
         </li>
       </ol>
-      {/* <div className="navItem">
-        <button className="logOutButton" onClick={() => authService.logout()}>
-          Log Out
-        </button>
-      </div> */}
     </nav>
   );
 };

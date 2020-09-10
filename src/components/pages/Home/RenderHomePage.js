@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getBudgetAction } from '../../../actionCreators/mainActions.js';
 import BudgetComparisonContainer from '../../charts/BudgetComparison/BudgetComparisonContainer';
 import { Navbar } from '../../common/index';
-import '../../../styles/Navbar.css';
+import '../../../styles/App.css';
 
 function RenderHomePage(props) {
   const { authService } = props;

@@ -9,6 +9,14 @@
     box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Avenir Medium'
+}
+
+button {
+    font-family: 'Circular Std Black';
+}
+
 .progressBarContainer {
     bottom: 0;
     position: fixed;
@@ -91,22 +99,6 @@
     display: none;
 }
 
-/* .logOutButton {
-    width: 120px;
-    padding: 5px 0;
-    margin: 0 20px;
-    border-radius: 10px;
-    background-color: #ecb7db;
-    border: 0;
-    color: #ffffff;
-} */
-
-/* .logOutButton:hover {
-    background-color: #ffffff;
-    border: 1px solid #ecb7db;
-    color: #ecb7db;
-} */
-
 .contentContainer {
     width: 100%;
     display: flex;
@@ -176,6 +168,98 @@ h6 {
 
 .progressButton {
     margin: 10px 0,
+}
+
+/* My Account Page */
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    width: 60%;
+    height: 500px;
+    padding: 20px 0 0 0;
+    margin: 50px auto;
+    justify-content: space-between;
+}
+
+.saveButton {
+    width: 100%;
+    padding: 5px 0;
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    background-color: #c01089;
+    border: 0;
+    color: #ffffff;
+    border: 1px solid #c01089;
+}
+
+.saveButton:hover {
+    background-color: #ffffff;
+    border: 1px solid #c01089;
+    color: #c01089;
+}
+
+.logOutButton {
+    width: 100%;
+    padding: 5px 0;
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    background-color: #c01089;
+    border: 0;
+    color: #ffffff;
+    border: 1px solid #c01089;
+}
+
+.logOutButton:hover {
+    background-color: #ffffff;
+    border: 1px solid #c01089;
+    color: #c01089;
+}
+
+.editButton {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #c01089;
+    color: #c01089;
+    background-color: #ffffff;
+}
+
+.editButton:hover {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: #c01089;
+}
+
+.userInfoContainer {
+    text-align: center;
+}
+
+.userInfoEditingContainer input {
+    margin: 5px auto;
+}
+
+.passwords input {
+    margin: 5px auto;
+}
+
+.profileAvatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 500px;
+    border: 3px solid rgba(0, 0, 0, .25);
+    margin-bottom: 20px;
+}
+
+.isNotActive {
+    display: none;
 }
 
 @media (max-width: 1000px) {
