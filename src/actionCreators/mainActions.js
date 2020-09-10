@@ -42,7 +42,7 @@ export const getSpendingBarAction = () => dispatch => {
     .post('https://saverlife-a-api.herokuapp.com/data/spending', {
       user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
       graph_type: 'bar',
-      time_period: 'month',
+      time_period: 'week',
     })
     .then(response => {
       dispatch({

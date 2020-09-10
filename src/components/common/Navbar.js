@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
-import { Menu, Dropdown } from 'antd';
 import {
   UserOutlined,
   HomeOutlined,
@@ -13,79 +11,74 @@ import {
 import '../../styles/Navbar.css';
 
 const Navbar = props => {
-  const [current, setCurrent] = useState('mail');
-  const { authService } = props;
-
-  const handleClick = e => {
-    setCurrent(e.key);
-  };
-
-  const profileMenu = (
-    <Menu>
-      <Menu.Item key="0">Profile</Menu.Item>
-      <Menu.Item key="0">Options</Menu.Item>
-      <Menu.Item key="0">Account Settings</Menu.Item>
-      <Menu.Divider />
-      <Menu.Item onClick={() => authService.logout()}>Logout</Menu.Item>
-    </Menu>
-  );
-
   return (
-    <Menu
-      onClick={handleClick}
-      selectedKeys={[current]}
-      mode="horizontal"
-      className="navBar"
-    >
-      <Menu.Item key="home" icon={<HomeOutlined />} className="navItem">
-        <Link to="/" className="test">
-          Home
-        </Link>
-      </Menu.Item>
-
-      <Menu.Item
-        key="past-spending"
-        icon={<BarChartOutlined />}
-        className="navItem"
-      >
-        <Link to="/past-spending" className="test">
-          Past Spending
-        </Link>
-      </Menu.Item>
-
-      <Menu.Item
-        key="budget-comparison"
-        icon={<PieChartOutlined />}
-        className="navItem"
-      >
-        <Link to="/" className="test">
-          Budget Comparison
-        </Link>
-      </Menu.Item>
-
-      <Menu.Item
-        key="projected-savings"
-        icon={<LineChartOutlined />}
-        className="navItem"
-      >
-        <Link to="/projected-savings" className="test">
-          Projected Savings
-        </Link>
-      </Menu.Item>
-
-      <Menu.Item
-        key="profile-menu"
-        icon={<UserOutlined />}
-        className="navItem dropdown"
-      >
-        <Dropdown overlay={profileMenu} trigger={['click']}>
-          {/* eslint-disable-next-line */}
-          <a className="test" onClick={e => e.preventDefault()}>
-            Profile
-          </a>
-        </Dropdown>
-      </Menu.Item>
-    </Menu>
+    <nav className="navBar">
+      <div className="logo">
+        <img
+          src="https://www.saverlife.org/assets/logo-saverlife-a4b213a1d9e8e51559d7f70d9f479f1473f536e12c8c4543654d5b3964004b0f.svg"
+          alt="SaverLife Logo"
+        />
+      </div>
+      <ol className="navBarList">
+        <li className={props.home ? 'navItem navItemActive' : 'navItem'}>
+          <Link to="/">Home</Link>
+        </li>
+        <li className={props.home ? 'navIcon navItemActive' : 'navIcon'}>
+          <Link to="/">
+            <HomeOutlined />
+          </Link>
+        </li>
+        <li
+          className={props.pastSpending ? 'navItem navItemActive' : 'navItem'}
+        >
+          <Link to="/past-spending">Past Spending</Link>
+        </li>
+        <li
+          className={props.pastSpending ? 'navIcon navItemActive' : 'navIcon'}
+        >
+          <Link to="/past-spending">
+            <BarChartOutlined />
+          </Link>
+        </li>
+        <li className="navItem">
+          <Link to="/">Budget Comparison</Link>
+        </li>
+        <li className="navIcon">
+          <Link to="/">
+            <PieChartOutlined />
+          </Link>
+        </li>
+        <li
+          className={
+            props.projectedSavings ? 'navItem navItemActive' : 'navItem'
+          }
+        >
+          <Link to="/projected-savings">Projected Savings</Link>
+        </li>
+        <li
+          className={
+            props.projectedSavings ? 'navIcon navItemActive' : 'navIcon'
+          }
+        >
+          <Link to="/projected-savings">
+            <LineChartOutlined />
+          </Link>
+        </li>
+        <li className="navItem">
+          <Link to="/">My Account</Link>
+        </li>
+        <li className="navIcon">
+          <Link to="/">
+            <UserOutlined />
+          </Link>
+        </li>
+      </ol>
+      {/* <div className="navItem">
+        <button className="logOutButton" onClick={() => authService.logout()}>
+          Log Out
+        </button>
+      </div> */}
+    </nav>
   );
 };
 

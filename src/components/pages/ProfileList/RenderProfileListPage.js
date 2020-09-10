@@ -1,11 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Progress } from 'antd';
-import Plot from 'react-plotly.js';
-
-import Navbar from '../../common/Navbar';
+import React from 'react';
 
 const RenderProfileListPage = props => {
   return (
