@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
@@ -24,13 +24,7 @@ import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
 import { mainReducer } from './reducers/mainReducer';
 
-const store = createStore(
-  mainReducer,
-  compose(
-    applyMiddleware(logger, thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-);
+const store = createStore(mainReducer, applyMiddleware(logger, thunk));
 
 ReactDOM.render(
   <Provider store={store}>
