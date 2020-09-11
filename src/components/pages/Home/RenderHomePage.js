@@ -16,9 +16,10 @@ function RenderHomePage(props) {
   const currentMonthlySpending = useSelector(
     state => state.currentMonthlySpending
   );
+
   useEffect(() => {
     dispatch(getBudgetAction());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="pageContainer">
