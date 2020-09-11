@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   UserOutlined,
   HomeOutlined,
@@ -20,56 +21,56 @@ const Navbar = props => {
       </div>
       <ol className="navBarList">
         <li className={props.home ? 'navItem navItemActive' : 'navItem'}>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li className={props.home ? 'navIcon navItemActive' : 'navIcon'}>
-          <a href="/">
+          <Link to="/">
             <HomeOutlined />
-          </a>
+          </Link>
         </li>
         <li
           className={props.pastSpending ? 'navItem navItemActive' : 'navItem'}
         >
-          <a href="/past-spending">Past Spending</a>
+          <Link to="/past-spending">Past Spending</Link>
         </li>
         <li
           className={props.pastSpending ? 'navIcon navItemActive' : 'navIcon'}
         >
-          <a href="/past-spending">
+          <Link to="/past-spending">
             <BarChartOutlined />
-          </a>
+          </Link>
         </li>
         <li className="navItem">
-          <a href="/">Budget Comparison</a>
+          <Link to="/">Budget Comparison</Link>
         </li>
         <li className="navIcon">
-          <a href="/">
+          <Link to="/">
             <PieChartOutlined />
-          </a>
+          </Link>
         </li>
         <li
           className={
             props.projectedSavings ? 'navItem navItemActive' : 'navItem'
           }
         >
-          <a href="/projected-savings">Projected Savings</a>
+          <Link to="/projected-savings">Projected Savings</Link>
         </li>
         <li
           className={
             props.projectedSavings ? 'navIcon navItemActive' : 'navIcon'
           }
         >
-          <a href="/projected-savings">
+          <Link to="/projected-savings">
             <LineChartOutlined />
-          </a>
+          </Link>
         </li>
         <li className="navItem">
-          <a href="/">My Account</a>
+          <Link to="/">My Account</Link>
         </li>
         <li className="navIcon">
-          <a href="/">
+          <Link to="/">
             <UserOutlined />
-          </a>
+          </Link>
         </li>
       </ol>
       {/* <div className="navItem">
