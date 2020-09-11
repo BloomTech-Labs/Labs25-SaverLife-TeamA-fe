@@ -19,7 +19,7 @@ const BudgetVisual = props => {
   //     spendingCurrent: categoriesAmountsCurrent,
   //     savingsGoalDollars: 100
   // });
-  console.log('Budget Visual', props);
+  // console.log('Budget Visual', props);
   const categoriesAmountsCurrent = props.categoryCurrent;
   const categoriesAmountsGoals = props.categoryGoals;
   const [userIncome, setUserIncome] = useState(2500);

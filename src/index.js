@@ -24,22 +24,16 @@ import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
 import { mainReducer } from './reducers/mainReducer';
 
-const store = createStore(
-  mainReducer,
-  compose(
-    applyMiddleware(logger, thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-);
+const store = createStore(mainReducer, applyMiddleware(logger, thunk));
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <React.StrictMode>
+  <Router>
+    <React.StrictMode>
+      <Provider store={store}>
         <App />
-      </React.StrictMode>
-    </Router>
-  </Provider>,
+      </Provider>
+    </React.StrictMode>
+  </Router>,
   document.getElementById('root')
 );
 
