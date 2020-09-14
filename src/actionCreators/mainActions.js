@@ -65,7 +65,7 @@ export const getSpendingBarAction = () => dispatch => {
 export const getSpendingDonutAction = () => dispatch => {
   axios
     .post('https://saverlife-a-api.herokuapp.com/data/spending', {
-      user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
+      user_ID: userId,
       graph_type: 'pie',
       time_period: 'month',
     })
