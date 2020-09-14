@@ -1,12 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import { Navbar, GoalProgressBar } from '../../common/index';
-import Plot from 'react-plotly.js';
+import { Tooltip } from 'antd';
+import { QuestionCircleOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
+
 import {
   getSpendingBarAction,
   getSpendingDonutAction,
 } from '../../../actionCreators/mainActions.js';
+import Plot from 'react-plotly.js';
+import { Navbar, GoalProgressBar } from '../../common/index';
 
 import '../../../styles/App.scss';
 
@@ -54,6 +57,16 @@ const RenderPastSpendingPage = props => {
       </div>
 
       <div className="contentContainer">
+        <div className="headerText">
+          <h2 className="pageHeader">Past Spending</h2>
+          <Tooltip
+            className="tooltipHeader"
+            placement="bottom"
+            title="What do you want others to call you?"
+          >
+            <QuestionCircleOutlined />
+          </Tooltip>
+        </div>
         <div className="spendingChart barChart">
           <Plot
             data={spendingBarData}

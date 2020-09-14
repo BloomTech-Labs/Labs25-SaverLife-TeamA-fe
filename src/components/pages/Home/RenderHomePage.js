@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
-import { Tooltip } from 'antd';
+import { Tooltip, Switch } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getBudgetAction } from '../../../actionCreators/mainActions.js';
 import BudgetComparisonContainer from '../../charts/BudgetComparison/BudgetComparisonContainer';
 import { Navbar, GoalProgressBar } from '../../common/index';
+import { useDarkMode } from '../../../hooks/useDarkMode';
+
 import '../../../styles/App.scss';
 
 function RenderHomePage(props) {
@@ -21,11 +23,27 @@ function RenderHomePage(props) {
     dispatch(getBudgetAction());
   }, []);
 
+  const [darkMode, setDarkMode] = useDarkMode();
+  const toggleMode = e => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  };
+
   return (
     <div className="pageContainer">
       <div className="navContainer">
         <Navbar home={true} authService={authService} />
       </div>
+
+      <Switch className="darkModeToggle"></Switch>
+
+      {/* <div className="darkModeToggle">
+        <p className="darkModeText">Dark Mode</p>
+        <div
+          onClick={toggleMode}
+          className={darkMode ? 'toggle toggled' : 'toggle'}
+        />
+      </div> */}
 
       <div className="contentContainer">
         <div className="headerText">
