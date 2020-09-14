@@ -51,7 +51,7 @@ const BudgetVisual = props => {
       })}
       {isEditing ? (
         <Button
-          style={buttonStyles}
+          className="progressButton"
           variant="dark"
           onClick={() => setIsEditing(!isEditing)}
         >
@@ -59,7 +59,7 @@ const BudgetVisual = props => {
         </Button>
       ) : (
         <Button
-          style={buttonStyles}
+          className="progressButton"
           variant="info"
           onClick={() => saveChanges()}
         >
@@ -76,11 +76,7 @@ const styles = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-around',
-  height: '500px',
-};
-
-const buttonStyles = {
-  margin: '30px 0',
+  height: '70vh',
 };
 
 export default BudgetVisual;

@@ -1,6 +1,8 @@
 import React from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
+import '../../../styles/Navbar.css';
+
 const EnhancedProgressBar = props => {
   const categoryName = props.entry[0];
   const categoryGoal = props.entry[1];
@@ -26,27 +28,18 @@ const EnhancedProgressBar = props => {
   // }
 
   return (
-    <div style={styles}>
-      <div className="progressHeader" style={headerStyles}>
+    <div className="individualBar">
+      <div className="progressHeader">
         <h6>{categoryName}</h6>
-        <p>{`Spent: $${(categoryCurrent + 0).toFixed(2)} | Remaining: $${(
-          categoryGoal - categoryCurrent
-        ).toFixed(2)} | Goal: ${goalRendering()}`}</p>
+        <p className="progressP">{`Spent: $${(categoryCurrent + 0).toFixed(
+          2
+        )} | Remaining: $${(categoryGoal - categoryCurrent).toFixed(
+          2
+        )} | Goal: ${goalRendering()}`}</p>
       </div>
       <ProgressBar striped variant={spendingStatus()} now={percentFilled} />
     </div>
   );
-};
-const headerStyles = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  flexDirection: 'row',
-  marginBottom: -10,
-};
-
-const styles = {
-  marginBottom: '15px',
-  width: '70%',
 };
 
 export default EnhancedProgressBar;

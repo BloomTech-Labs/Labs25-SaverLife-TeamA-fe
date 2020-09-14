@@ -59,14 +59,10 @@
     height: 84vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 0 auto;
     margin-top: 8vh;
     margin-bottom: 8vh;
-}
-
-.mainContent {
-    width: 100%;
-    margin: auto;
 }
 
 .spinner-div {
@@ -78,12 +74,41 @@
 
 .budgetComparison {
     width: 100%;
-    margin: auto;
+    /* margin: auto; */
+    /* padding: 10px 0; */
     overflow: auto;
 }
 
 h1, h2, h3 {
     text-align: center;
+}
+
+h6 {
+    margin-bottom: -5px;
+}
+
+.pageHeader {
+    margin-top: 2.5vh;
+}
+
+.individualBar {
+    margin-bottom: 15px;
+    width: 90%;
+}
+
+.progressHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.progressP {
+    line-height: 1.25rem;
+    margin-bottom: 0;
+}
+
+.progressButton {
+    margin: '10px 0',
 }
 
 @media (max-width: 800px) {
@@ -112,12 +137,28 @@ h1, h2, h3 {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
+
     p {
-        font-size: .5rem;
+        font-size: .75rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .progressHeader {
+        flex-direction: column;
+    }
+
+    .progressButton {
+        font-size: .75rem;
+        margin: 0;
+    }
+
+    p {
+        font-size: .5rem
     }
 
     h6 {
-        font-size: .75rem;
-    }
+        font-size: .75rem
+    }    
 }

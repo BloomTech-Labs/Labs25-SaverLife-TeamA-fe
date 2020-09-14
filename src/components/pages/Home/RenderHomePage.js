@@ -98,8 +98,8 @@ function RenderHomePage(props) {
       </div>
 
       <div className="contentContainer">
+        <h2 className="pageHeader">My Budget</h2>
         <div className="budgetComparison">
-          <h2>My Budget</h2>
           <BudgetComparisonContainer
             categoryGoals={futureBudget}
             categoryCurrent={currentSpending}
