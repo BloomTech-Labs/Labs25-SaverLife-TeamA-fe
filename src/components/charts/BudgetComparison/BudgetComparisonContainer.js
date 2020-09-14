@@ -2,10 +2,9 @@ import React from 'react';
 import BudgetVisual from './BudgetVisual.js';
 
 const BudgetComparisonContainer = props => {
-  console.log(props);
   return (
-    <div class="budget-comparison-container">
-      <div class="plotly-container">
+    <div className="budget-comparison-container">
+      <div className="plotly-container">
         <BudgetVisual
           categoryGoals={props.categoryGoals}
           categoryCurrent={props.categoryCurrent}

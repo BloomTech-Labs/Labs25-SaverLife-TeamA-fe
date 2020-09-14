@@ -7,23 +7,31 @@ import {
   Switch,
 } from 'react-router-dom';
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
 import 'antd/dist/antd.less';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { NotFoundPage } from './components/pages/NotFound';
-import { ProfileListPage } from './components/pages/ProfileList';
+import { ProfilePage } from './components/pages/Profile';
 import { LoginPage } from './components/pages/Login';
 import { HomePage } from './components/pages/Home';
 import { PastSpendingPage } from './components/pages/PastSpending';
 import { ProjectedSavingsPage } from './components/pages/ProjectedSavings';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
+import { mainReducer } from './reducers/mainReducer';
+
+const store = createStore(mainReducer, applyMiddleware(logger, thunk));
 
 ReactDOM.render(
   <Router>
     <React.StrictMode>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </React.StrictMode>
   </Router>,
   document.getElementById('root')
@@ -56,7 +64,7 @@ function App() {
           path="/projected-savings"
           component={ProjectedSavingsPage}
         />
-        <SecureRoute path="/profile-list" component={ProfileListPage} />
+        <SecureRoute path="/my-account" component={ProfilePage} />
         <Route component={NotFoundPage} />
       </Switch>
     </Security>

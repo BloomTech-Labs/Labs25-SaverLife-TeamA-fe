@@ -1,6 +1,5 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-
 import EnhancedProgressBar from './EnhancedProgressBar';
 
 // const traces = categories_amounts.map(category => {
@@ -20,7 +19,7 @@ const BudgetVisual = props => {
   //     spendingCurrent: categoriesAmountsCurrent,
   //     savingsGoalDollars: 100
   // });
-  console.log('Budget Visual', props);
+  // console.log('Budget Visual', props);
   const categoriesAmountsCurrent = props.categoryCurrent;
   const categoriesAmountsGoals = props.categoryGoals;
   const [userIncome, setUserIncome] = useState(2500);
@@ -49,7 +48,7 @@ const BudgetVisual = props => {
           />
         );
       })}
-      {isEditing ? (
+      {/* {isEditing ? (
         <Button
           className="progressButton"
           variant="dark"
@@ -65,7 +64,7 @@ const BudgetVisual = props => {
         >
           Edit Spending Goals
         </Button>
-      )}
+      )} */}
     </div>
   );
 };
@@ -76,7 +75,7 @@ const styles = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-around',
-  height: '70vh',
+  height: '450px',
 };
 
 export default BudgetVisual;
