@@ -16,29 +16,13 @@ button {
     font-family: 'Circular Std Black';
 }
 
-.progressBarContainer {
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    background-color: #ffffff;
-    align-items: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.progressBar {
-    width: 80%;
-    margin: 12.5px 10%;
-    height: 35px;
-    color: #ecb7db;
-}
-
 .pageContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
+
+// NavBar Styles //
 
 .navContainer {
     position: fixed;
@@ -97,6 +81,26 @@ button {
     display: none;
 }
 
+//Progress Bar Styles//
+
+.progressBarContainer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.progressBar {
+    width: 80%;
+    margin: 12.5px 10%;
+    height: 35px;
+    color: #ecb7db;
+}
+
 .contentContainer {
     width: 100%;
     display: flex;
@@ -104,6 +108,15 @@ button {
     align-items: center;
     margin-top: 65px;
     margin-bottom: 65px;
+}
+
+// Main Content //
+
+.spinner-div {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    margin-top: 45vh;
 }
 
 .borderBox {
@@ -117,12 +130,6 @@ button {
     padding: 20px 0;
 }
 
-.spendingChart {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
 .headerText{
     display: flex;
     flex-direction: row;
@@ -133,11 +140,10 @@ button {
     margin-left: .5vw;
 }
 
-.spinner-div {
-    height: 100vh;
+.spendingChart {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    text-align: center;
-    margin-top: 45vh;
 }
 
 .budgetComparison {
@@ -286,34 +292,43 @@ h6 {
         box-shadow: none;
         border-top: 2px solid #ecb7db;
     }
-
+    
     .navBarList {
         width: 100%;
         margin-right: 30px;
         justify-content: space-evenly;
     }
-
+    
     .navItem a {
         font-size: 0px;
     }
-
+    
     .navIcon {
         display: inline;
-
+        
     }
-
+    
     .navIcon a span {
         color: #ecb7db;
     }
-
+    
     .navItemActive a {
         border-bottom: 0;
         border-top: 2px solid #c01089;
         padding-top: 17px;
     }
-
+    
     .navItemActive a span {
         color: #c01089;
+    }
+    
+    .navContainer {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .pageContainer {
+        flex-direction: column-reverse;
     }
 
     .logo {
@@ -327,16 +342,7 @@ h6 {
         border-bottom: 2px solid #ecb7db;
     }
 
-    .navContainer {
-        position: fixed;
-        bottom: 0;
-    }
-
-    .pageContainer {
-        flex-direction: column-reverse;
-    }
 }
-
 
 @media (min-width: 801px) {
     .navContainer {
@@ -369,3 +375,11 @@ h6 {
         font-size: .75rem
     }    
 }
+
+// Dark Mode //
+
+.darkModeToggle {
+    position: absolute;
+    top: 90px;
+    right: 5%;
+  }
