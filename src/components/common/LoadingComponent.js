@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Spin } from 'antd';
 
-import '../../styles/Navbar.css';
+import '../../styles/App.scss';
 
 function LoadingComponent(props) {
   return (

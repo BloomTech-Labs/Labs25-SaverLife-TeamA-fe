@@ -8,7 +8,7 @@ import {
   PieChartOutlined,
 } from '@ant-design/icons';
 
-import '../../styles/Navbar.css';
+import '../../styles/App.scss';
 
 const Navbar = props => {
   return (
@@ -64,20 +64,15 @@ const Navbar = props => {
             <LineChartOutlined />
           </Link>
         </li>
-        <li className="navItem">
-          <Link to="/">My Account</Link>
+        <li className={props.myAccount ? 'navItem navItemActive' : 'navItem'}>
+          <Link to="/my-account">My Account</Link>
         </li>
-        <li className="navIcon">
-          <Link to="/">
+        <li className={props.myAccount ? 'navIcon navItemActive' : 'navIcon'}>
+          <Link to="/my-account">
             <UserOutlined />
           </Link>
         </li>
       </ol>
-      {/* <div className="navItem">
-        <button className="logOutButton" onClick={() => authService.logout()}>
-          Log Out
-        </button>
-      </div> */}
     </nav>
   );
 };

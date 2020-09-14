@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { Progress, Tooltip } from 'antd';
+import { Tooltip } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getBudgetAction } from '../../../actionCreators/mainActions.js';
 import BudgetComparisonContainer from '../../charts/BudgetComparison/BudgetComparisonContainer';
-import { Navbar } from '../../common/index';
-import '../../../styles/Navbar.css';
+import { Navbar, GoalProgressBar } from '../../common/index';
+import '../../../styles/App.scss';
 
 function RenderHomePage(props) {
   const { authService } = props;
@@ -38,23 +38,19 @@ function RenderHomePage(props) {
             <QuestionCircleOutlined />
           </Tooltip>
         </div>
-        <div className="budgetComparison">
-          <BudgetComparisonContainer
-            categoryGoals={futureBudget}
-            categoryCurrent={currentMonthlySpending}
-          />
+        <div className="borderBox">
+          <div className="budgetComparison">
+            <BudgetComparisonContainer
+              categoryGoals={futureBudget}
+              categoryCurrent={currentMonthlySpending}
+            />
+          </div>
         </div>
       </div>
 
       <div className="progressBarContainer">
         {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
-        <Progress
-          className="progressBar"
-          strokeColor={{ '0%': '#ecb7db', '100%': '#c01089' }}
-          percent={70}
-          strokeWidth={20}
-          showInfo={false}
-        />
+        <GoalProgressBar />
       </div>
     </div>
   );

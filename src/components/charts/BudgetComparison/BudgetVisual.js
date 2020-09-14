@@ -19,7 +19,7 @@ const BudgetVisual = props => {
   //     spendingCurrent: categoriesAmountsCurrent,
   //     savingsGoalDollars: 100
   // });
-  console.log('Budget Visual', props);
+  // console.log('Budget Visual', props);
   const categoriesAmountsCurrent = props.categoryCurrent;
   const categoriesAmountsGoals = props.categoryGoals;
   const [userIncome, setUserIncome] = useState(2500);
@@ -75,7 +75,7 @@ const styles = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-around',
-  height: '70vh',
+  height: '450px',
 };
 
 export default BudgetVisual;

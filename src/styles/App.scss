@@ -1,12 +1,19 @@
-/* * {
-    border: 1px solid red; 
-} */
+$primary: #c01089;
 
 @import url(//db.onlinewebfonts.com/c/f1a22f6f15d272c7aa56da8b2c91f5e5?family=Circular+Std+Black);
 @import url(//db.onlinewebfonts.com/c/2090551770be22b09600a40b0b4673b7?family=Avenir+Medium);
+@import '~bootstrap/scss/bootstrap';
 
 * {
     box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Avenir Medium'
+}
+
+button {
+    font-family: 'Circular Std Black';
 }
 
 .progressBarContainer {
@@ -22,16 +29,15 @@
 
 .progressBar {
     width: 80%;
-    margin: 2.5vh 10%;
+    margin: 12.5px 10%;
+    height: 35px;
+    color: #ecb7db;
 }
 
 .pageContainer {
     width: 100%;
-    /* height: 100vh; */
     display: flex;
     flex-direction: column;
-    /* margin-top: 8vh;
-    margin-bottom: 8vh; */
 }
 
 .navContainer {
@@ -91,29 +97,24 @@
     display: none;
 }
 
-/* .logOutButton {
-    width: 120px;
-    padding: 5px 0;
-    margin: 0 20px;
-    border-radius: 10px;
-    background-color: #ecb7db;
-    border: 0;
-    color: #ffffff;
-} */
-
-/* .logOutButton:hover {
-    background-color: #ffffff;
-    border: 1px solid #ecb7db;
-    color: #ecb7db;
-} */
-
 .contentContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 8vh;
-    margin-bottom: 8vh;
+    margin-top: 65px;
+    margin-bottom: 65px;
+}
+
+.borderBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .15);
+    margin-top: 10px;
+    padding: 20px 0;
 }
 
 .spendingChart {
@@ -141,8 +142,6 @@
 
 .budgetComparison {
     width: 100%;
-    /* margin: auto; */
-    /* padding: 10px 0; */
     overflow: auto;
 }
 
@@ -155,12 +154,17 @@ h6 {
 }
 
 .pageHeader {
-    margin-top: 2.5vh;
+    margin-top: 20px;
 }
 
 .individualBar {
     margin-bottom: 15px;
     width: 90%;
+}
+
+.budgetBar {
+    height: 25px;
+    margin-top: 3px;
 }
 
 .progressHeader {
@@ -176,6 +180,98 @@ h6 {
 
 .progressButton {
     margin: 10px 0,
+}
+
+/* My Account Page */
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    width: 60%;
+    height: 500px;
+    padding: 20px 0 0 0;
+    margin: 50px auto;
+    justify-content: space-between;
+}
+
+.saveButton {
+    width: 100%;
+    padding: 5px 0;
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    background-color: #c01089;
+    border: 0;
+    color: #ffffff;
+    border: 1px solid #c01089;
+}
+
+.saveButton:hover {
+    background-color: #ffffff;
+    border: 1px solid #c01089;
+    color: #c01089;
+}
+
+.logOutButton {
+    width: 100%;
+    padding: 5px 0;
+    margin-top: 20px;
+    border-radius: 0 0 10px 10px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    background-color: #c01089;
+    border: 0;
+    color: #ffffff;
+    border: 1px solid #c01089;
+}
+
+.logOutButton:hover {
+    background-color: #ffffff;
+    border: 1px solid #c01089;
+    color: #c01089;
+}
+
+.editButton {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #c01089;
+    color: #c01089;
+    background-color: #ffffff;
+}
+
+.editButton:hover {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: #c01089;
+}
+
+.userInfoContainer {
+    text-align: center;
+}
+
+.userInfoEditingContainer input {
+    margin: 5px auto;
+}
+
+.passwords input {
+    margin: 5px auto;
+}
+
+.profileAvatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 500px;
+    border: 3px solid rgba(0, 0, 0, .25);
+    margin-bottom: 20px;
+}
+
+.isNotActive {
+    display: none;
 }
 
 @media (max-width: 1000px) {
@@ -248,14 +344,14 @@ h6 {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     p {
         font-size: .75rem;
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
     .progressHeader {
         flex-direction: column;
     }

@@ -3,6 +3,12 @@ import {
   GET_NET_INCOME,
   GET_SPENDING_BAR,
   GET_SPENDING_DONUT,
+  SET_EDITING,
+  GET_USER,
+  SET_USER_NAME,
+  SET_USER_EMAIL,
+  SET_USER_PHONE,
+  SET_USER_PASSWORD,
 } from '../actionCreators/mainActions';
 
 const initialState = {
@@ -17,6 +23,13 @@ const initialState = {
     spendingBar: {},
     netIncome: {},
     spendingDonut: {},
+  },
+  user: {
+    name: 'John Smith',
+    email: 'jsmith@gmail.com',
+    phone: '(414) 440-4140',
+    password: 'qweasd',
+    isEditing: false,
   },
 };
 
@@ -68,6 +81,53 @@ export const mainReducer = (state = initialState, action) => {
         layout: {
           ...state.layout,
           netIncome: action.layout,
+        },
+      };
+    case SET_EDITING:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          isEditing: !state.user.isEditing,
+        },
+      };
+    case GET_USER:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+        },
+      };
+    case SET_USER_NAME:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          name: action.name,
+        },
+      };
+    case SET_USER_EMAIL:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          email: action.email,
+        },
+      };
+    case SET_USER_PHONE:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          phone: action.phone,
+        },
+      };
+    case SET_USER_PASSWORD:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          password: action.password,
         },
       };
     default:
