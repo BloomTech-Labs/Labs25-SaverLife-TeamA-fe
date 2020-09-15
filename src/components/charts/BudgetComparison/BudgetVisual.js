@@ -75,7 +75,6 @@ const styles = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-around',
-  height: '450px',
 };
 
 export default BudgetVisual;

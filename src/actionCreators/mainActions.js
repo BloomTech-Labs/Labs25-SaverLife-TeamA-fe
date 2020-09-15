@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import getEmail from '../utils/getEmail';
+
 export const GET_BUDGET = 'get_budget';
 export const GET_NET_INCOME = 'get_net_income';
 export const GET_SPENDING_BAR = 'get_spending_bar';
@@ -11,13 +13,14 @@ export const SET_USER_EMAIL = 'set_user_email';
 export const SET_USER_PHONE = 'set_user_phone';
 export const SET_USER_PASSWORD = 'set_user_password';
 
+const userId = getEmail();
+
 export const getBudgetAction = () => dispatch => {
-  const user = '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ';
   let futureBudget = {};
   let currentSpending = {};
   axios
     .post('https://saverlife-a-api.herokuapp.com/data/future_budget', {
-      user_id: user,
+      user_id: userId,
       monthly_savings_goal: 50,
       placeholder: 'banjo',
     })
@@ -27,7 +30,7 @@ export const getBudgetAction = () => dispatch => {
       // console.log('request complete');
       axios
         .get(
-          `https://saverlife-a-api.herokuapp.com/data/current_month_spending/${user}`
+          `https://saverlife-a-api.herokuapp.com/data/current_month_spending/${userId}`
         )
         .then(response => {
           // console.log(response.data)
@@ -46,7 +49,7 @@ export const getBudgetAction = () => dispatch => {
 export const getSpendingBarAction = () => dispatch => {
   axios
     .post('https://saverlife-a-api.herokuapp.com/data/spending', {
-      user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
+      user_ID: userId,
       graph_type: 'bar',
       time_period: 'week',
     })
@@ -62,7 +65,7 @@ export const getSpendingBarAction = () => dispatch => {
 export const getSpendingDonutAction = () => dispatch => {
   axios
     .post('https://saverlife-a-api.herokuapp.com/data/spending', {
-      user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
+      user_ID: userId,
       graph_type: 'pie',
       time_period: 'month',
     })
@@ -78,7 +81,7 @@ export const getSpendingDonutAction = () => dispatch => {
 export const getNetIncomeAction = () => dispatch => {
   axios
     .post('https://saverlife-a-api.herokuapp.com/data/moneyflow', {
-      user_ID: '1635ob1dkQIz1QMjLmBpt0E36VyM96ImeyrgZ',
+      user_ID: userId,
       time_period: 'month',
     })
     .then(response => {
