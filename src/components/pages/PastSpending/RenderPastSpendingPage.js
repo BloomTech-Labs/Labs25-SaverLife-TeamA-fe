@@ -86,7 +86,7 @@ const RenderPastSpendingPage = props => {
           className="switchButton"
           onClick={() => setDarkMode(prevMode => !prevMode)}
         >
-          {darkMode ? 'Dark Mode' : 'Light Mode'}
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
           <BulbFilled className="bulbIcon" />
         </button>
       </div>
