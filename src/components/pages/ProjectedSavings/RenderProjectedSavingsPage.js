@@ -1,9 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import { Navbar, GoalProgressBar } from '../../common/index';
-import Plot from 'react-plotly.js';
+import { Tooltip } from 'antd';
+import { QuestionCircleOutlined, BulbFilled } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { getNetIncomeAction } from '../../../actionCreators/mainActions.js';
+import Plot from 'react-plotly.js';
+import { Navbar, GoalProgressBar } from '../../common/index';
 
 import '../../../styles/App.scss';
 
@@ -25,6 +28,17 @@ const RenderProjectedSavingsPage = props => {
     dispatch(getNetIncomeAction());
   }, []);
 
+  const [darkMode, setDarkMode] = React.useState(getMode);
+
+  useEffect(() => {
+    localStorage.setItem('dark', JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  function getMode() {
+    const savedMode = JSON.parse(localStorage.getItem('dark'));
+    return savedMode || false;
+  }
+
   useEffect(() => {
     function handleResize() {
       width =
@@ -39,9 +53,33 @@ const RenderProjectedSavingsPage = props => {
 
   const { authService } = props;
   return (
-    <div className="pageContainer">
+    <div
+      className={
+        darkMode ? 'pageContainer dark-mode' : 'pageContainer light-mode'
+      }
+    >
       <div className="navContainer">
         <Navbar projectedSavings={true} authService={authService} />
+      </div>
+
+      <div className="headerText">
+        <h2 className="pageHeader">Past Spending</h2>
+
+        <Tooltip
+          className="tooltipHeader"
+          placement="bottom"
+          title="What do you want others to call you?"
+        >
+          <QuestionCircleOutlined />
+        </Tooltip>
+
+        <button
+          className="switchButton"
+          onClick={() => setDarkMode(prevMode => !prevMode)}
+        >
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+          <BulbFilled className="bulbIcon" />
+        </button>
       </div>
 
       <div className="contentContainer">
