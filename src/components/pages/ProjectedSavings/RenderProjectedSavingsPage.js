@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { Tooltip } from 'antd';
-import { QuestionCircleOutlined } from '@ant-design/icons';
+import { QuestionCircleOutlined, BulbFilled } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getNetIncomeAction } from '../../../actionCreators/mainActions.js';
@@ -78,6 +78,7 @@ const RenderProjectedSavingsPage = props => {
           onClick={() => setDarkMode(prevMode => !prevMode)}
         >
           {darkMode ? 'Dark Mode' : 'Light Mode'}
+          <BulbFilled className="bulbIcon" />
         </button>
       </div>
 

@@ -48,8 +48,23 @@ const RenderProfilePage = props => {
     dispatch(getUser());
   }, [dispatch]);
 
+  const [darkMode, setDarkMode] = React.useState(getMode);
+
+  useEffect(() => {
+    localStorage.setItem('dark', JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  function getMode() {
+    const savedMode = JSON.parse(localStorage.getItem('dark'));
+    return savedMode || false;
+  }
+
   return (
-    <div className="pageContainer">
+    <div
+      className={
+        darkMode ? 'pageContainer dark-mode' : 'pageContainer light-mode'
+      }
+    >
       <div className="navContainer">
         <Navbar myAccount={true} />
       </div>
