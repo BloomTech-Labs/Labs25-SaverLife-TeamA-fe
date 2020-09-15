@@ -28,6 +28,17 @@ const RenderProjectedSavingsPage = props => {
     dispatch(getNetIncomeAction());
   }, []);
 
+  const [darkMode, setDarkMode] = React.useState(getMode);
+
+  useEffect(() => {
+    localStorage.setItem('dark', JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  function getMode() {
+    const savedMode = JSON.parse(localStorage.getItem('dark'));
+    return savedMode || false;
+  }
+
   useEffect(() => {
     function handleResize() {
       width =
@@ -42,22 +53,35 @@ const RenderProjectedSavingsPage = props => {
 
   const { authService } = props;
   return (
-    <div className="pageContainer">
+    <div
+      className={
+        darkMode ? 'pageContainer dark-mode' : 'pageContainer light-mode'
+      }
+    >
       <div className="navContainer">
         <Navbar projectedSavings={true} authService={authService} />
       </div>
 
+      <div className="headerText">
+        <h2 className="pageHeader">Past Spending</h2>
+
+        <Tooltip
+          className="tooltipHeader"
+          placement="bottom"
+          title="What do you want others to call you?"
+        >
+          <QuestionCircleOutlined />
+        </Tooltip>
+
+        <button
+          className="switchButton"
+          onClick={() => setDarkMode(prevMode => !prevMode)}
+        >
+          {darkMode ? 'Dark Mode' : 'Light Mode'}
+        </button>
+      </div>
+
       <div className="contentContainer">
-        <div className="headerText">
-          <h2 className="pageHeader">Past Spending</h2>
-          <Tooltip
-            className="tooltipHeader"
-            placement="bottom"
-            title="What do you want others to call you?"
-          >
-            <QuestionCircleOutlined />
-          </Tooltip>
-        </div>
         <Plot
           data={netIncomeData}
           layout={{ ...netIncomeLayout, ...dimensions }}

@@ -22,6 +22,82 @@ button {
     flex-direction: column;
 }
 
+// Light-Dark Mode //
+
+.light-mode, .light-mode .headerText {
+    background-color: #ffffff;
+    color: black;  
+}
+
+.light-mode h2, .lightmode h6 {
+    color: black;
+}
+
+.light-mode .navBar {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 2.5px rgba(0, 10, 10, 0.25);
+}
+
+.light-mode .progressBarContainer {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 2.5px rgba(0, 10, 10, 0.25);
+}
+
+.dark-mode, .dark-mode .headerText {
+    background-color: #1a1919;
+    color: #ffffff;  
+}
+
+.dark-mode h2, .dark-mode h6 {
+    color: #ffffff
+}
+
+.dark-mode .borderBox {
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, .9);
+}
+
+.dark-mode .navBar {
+    background-color: black;
+    box-shadow: 0px 0px 2.5px rgba(255, 255, 255, .9);
+}
+
+.dark-mode .progressBarContainer {
+    background-color: black;
+    box-shadow: 0px 0px 2.5px rgba(255, 255, 255, .9);
+}
+
+.switchButton {
+    position: fixed;
+    margin-top: 5px;
+    right: 5%;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.light-mode .switchButton {
+    color: #c01089;
+    border: solid 2px #c01089;
+    background-color: #ffffff
+}
+
+.light-mode .switchButton:hover {
+    color: #ecb7db;
+    border: solid 2px #ecb7db;
+    background-color: black;
+}
+
+.dark-mode .switchButton {
+    color: #ecb7db;
+    border: solid 2px #ecb7db;
+    background-color: black;
+}
+
+.dark-mode .switchButton:hover {
+    color: #c01089;
+    border: solid 2px #c01089;
+    background-color: #ffffff;
+}
+
 // NavBar Styles //
 
 .navContainer {
@@ -30,7 +106,6 @@ button {
     width: 100%;
     align-items: center;
     margin: 0 auto;
-    background-color: #ffffff;
     z-index: 1;
 }
 
@@ -40,8 +115,6 @@ button {
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #ffffff;
-    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
@@ -88,9 +161,7 @@ button {
     position: fixed;
     width: 100%;
     height: 60px;
-    background-color: #ffffff;
     align-items: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
@@ -106,8 +177,8 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 65px;
-    margin-bottom: 65px;
+    margin-top: 110px;
+    margin-bottom: 80px;
 }
 
 // Main Content //
@@ -127,13 +198,17 @@ button {
     border-radius: 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, .15);
     margin-top: 10px;
-    padding: 20px 0;
+    padding: 20px 0px 10px 0px;
 }
 
 .headerText{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    top: 60px;
+    padding-top: 10px;
 }
 
 .headerText .tooltipHeader {
@@ -147,7 +222,6 @@ button {
 }
 
 .budgetComparison {
-    padding-top: 90px;
     width: 100%;
     overflow: auto;
 }
@@ -157,11 +231,8 @@ h1, h2, h3 {
 }
 
 h6 {
-    margin-bottom: -5px;
-}
-
-.pageHeader {
-    margin-top: 20px;
+    margin-bottom: 0px;
+    
 }
 
 .individualBar {
@@ -281,6 +352,8 @@ h6 {
     display: none;
 }
 
+// media querie //
+
 @media (max-width: 1000px) {
     .navItem a {
         font-size: .75rem;
@@ -289,11 +362,6 @@ h6 {
 }
 
 @media (max-width: 800px) {
-    .navBar {
-        box-shadow: none;
-        border-top: 2px solid #ecb7db;
-    }
-    
     .navBarList {
         width: 100%;
         margin-right: 30px;
@@ -339,8 +407,6 @@ h6 {
     .progressBarContainer {
         position: fixed;
         top: 0;
-        box-shadow: 0px 0px 7px rgba(236, 183, 219, 1); 
-        border-bottom: 2px solid #ecb7db;
     }
 
 }
@@ -359,6 +425,11 @@ h6 {
 }
 
 @media (max-width: 550px) {
+
+    .budgetComparisonContainer {
+        margin-top: 55px;
+    }
+
     .progressHeader {
         flex-direction: column;
     }
@@ -369,18 +440,10 @@ h6 {
     }
 
     p {
-        font-size: .5rem
+        font-size: .5rem;
     }
 
     h6 {
-        font-size: .75rem
-    }    
+        font-size: .75rem;
+    } 
 }
-
-// Dark Mode //
-
-.darkModeToggle {
-    position: absolute;
-    top: 90px;
-    right: 5%;
-  }
