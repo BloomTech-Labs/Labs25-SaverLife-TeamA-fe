@@ -12,14 +12,23 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Avenir Medium'
 }
 
+.main-svg {
+    background: none;
+}
+
 button {
     font-family: 'Circular Std Black';
 }
 
 .pageContainer {
     width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+#sign-in-widget {
+    margin-top: 15vh;
 }
 
 // Light-Dark Mode //

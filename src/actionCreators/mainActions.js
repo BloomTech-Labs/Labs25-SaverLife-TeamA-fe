@@ -13,9 +13,9 @@ export const SET_USER_EMAIL = 'set_user_email';
 export const SET_USER_PHONE = 'set_user_phone';
 export const SET_USER_PASSWORD = 'set_user_password';
 
-const userId = getEmail();
-
 export const getBudgetAction = () => dispatch => {
+  const userId = getEmail();
+
   let futureBudget = {};
   let currentSpending = {};
   axios
@@ -47,6 +47,8 @@ export const getBudgetAction = () => dispatch => {
 };
 
 export const getSpendingBarAction = () => dispatch => {
+  const userId = getEmail();
+
   axios
     .post('https://saverlife-a-api.herokuapp.com/data/spending', {
       user_ID: userId,
@@ -54,15 +56,22 @@ export const getSpendingBarAction = () => dispatch => {
       time_period: 'week',
     })
     .then(response => {
+      const spendingLayout = JSON.parse(response.data).layout;
       dispatch({
         type: GET_SPENDING_BAR,
         data: JSON.parse(response.data).data,
-        layout: JSON.parse(response.data).layout,
+        layout: {
+          ...spendingLayout,
+          plot_bgcolor: 'rgba(0, 0, 0, 0)',
+          paper_bgcolor: 'rgba(0, 0, 0, 0)',
+        },
       });
     });
 };
 
 export const getSpendingDonutAction = () => dispatch => {
+  const userId = getEmail();
+
   axios
     .post('https://saverlife-a-api.herokuapp.com/data/spending', {
       user_ID: userId,
@@ -70,25 +79,37 @@ export const getSpendingDonutAction = () => dispatch => {
       time_period: 'month',
     })
     .then(response => {
+      const donutLayout = JSON.parse(response.data).layout;
       dispatch({
         type: GET_SPENDING_DONUT,
         data: JSON.parse(response.data).data,
-        layout: JSON.parse(response.data).layout,
+        layout: {
+          ...donutLayout,
+          plot_bgcolor: 'rgba(0, 0, 0, 0)',
+          paper_bgcolor: 'rgba(0, 0, 0, 0)',
+        },
       });
     });
 };
 
 export const getNetIncomeAction = () => dispatch => {
+  const userId = getEmail();
+
   axios
     .post('https://saverlife-a-api.herokuapp.com/data/moneyflow', {
       user_ID: userId,
       time_period: 'month',
     })
     .then(response => {
+      const moneyFlowLayout = JSON.parse(response.data).layout;
       dispatch({
         type: GET_NET_INCOME,
         data: JSON.parse(response.data).data,
-        layout: JSON.parse(response.data).layout,
+        layout: {
+          ...moneyFlowLayout,
+          plot_bgcolor: 'rgba(0, 0, 0, 0)',
+          paper_bgcolor: 'rgba(0, 0, 0, 0)',
+        },
       });
     });
 };

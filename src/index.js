@@ -18,6 +18,7 @@ import { NotFoundPage } from './components/pages/NotFound';
 import { ProfilePage } from './components/pages/Profile';
 import { LoginPage } from './components/pages/Login';
 import { HomePage } from './components/pages/Home';
+import { MyBudgetPage } from './components/pages/MyBudget';
 import { PastSpendingPage } from './components/pages/PastSpending';
 import { ProjectedSavingsPage } from './components/pages/ProjectedSavings';
 import { config } from './utils/oktaConfig';
@@ -59,6 +60,7 @@ function App() {
           exact
           component={() => <HomePage LoadingComponent={LoadingComponent} />}
         />
+        <SecureRoute path="/my-budget" component={MyBudgetPage} />
         <SecureRoute path="/past-spending" component={PastSpendingPage} />
         <SecureRoute
           path="/projected-savings"
