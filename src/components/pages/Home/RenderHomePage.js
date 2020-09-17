@@ -44,7 +44,7 @@ function RenderHomePage(props) {
       </div>
 
       <div className="headerText">
-        <h2 className="pageHeader">My Budget</h2>
+        <h2 className="pageHeader">My Home</h2>
 
         <Tooltip
           className="tooltipHeader"
@@ -59,6 +59,7 @@ function RenderHomePage(props) {
             className="lightSwitch"
             checked={darkMode}
             onChange={() => setDarkMode(prevMode => !prevMode)}
+            size="small"
           />
           <BulbTwoTone
             twoToneColor={darkMode ? '#ecb7db' : '#1a1919'}
@@ -69,12 +70,7 @@ function RenderHomePage(props) {
 
       <div className="contentContainer">
         <div className="borderBox">
-          <div className="budgetComparison">
-            <BudgetComparisonContainer
-              categoryGoals={futureBudget}
-              categoryCurrent={currentMonthlySpending}
-            />
-          </div>
+          <p>Content Goes Here</p>
         </div>
       </div>
 

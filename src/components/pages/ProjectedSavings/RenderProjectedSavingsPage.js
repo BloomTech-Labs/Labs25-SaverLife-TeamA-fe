@@ -63,7 +63,7 @@ const RenderProjectedSavingsPage = props => {
       </div>
 
       <div className="headerText">
-        <h2 className="pageHeader">Past Spending</h2>
+        <h2 className="pageHeader">Projected Savings</h2>
 
         <Tooltip
           className="tooltipHeader"
@@ -78,6 +78,7 @@ const RenderProjectedSavingsPage = props => {
             className="lightSwitch"
             checked={darkMode}
             onChange={() => setDarkMode(prevMode => !prevMode)}
+            size="small"
           />
           <BulbTwoTone
             twoToneColor={darkMode ? '#ecb7db' : '#1a1919'}

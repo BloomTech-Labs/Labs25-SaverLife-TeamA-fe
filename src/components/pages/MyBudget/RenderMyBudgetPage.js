@@ -59,6 +59,7 @@ function RenderMyBudgetPage(props) {
             className="lightSwitch"
             checked={darkMode}
             onChange={() => setDarkMode(prevMode => !prevMode)}
+            size="small"
           />
           <BulbTwoTone
             twoToneColor={darkMode ? '#ecb7db' : '#1a1919'}
