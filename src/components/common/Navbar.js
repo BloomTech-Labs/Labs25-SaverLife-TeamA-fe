@@ -34,7 +34,7 @@ const Navbar = props => {
         <li className={props.myBudget ? 'navItem navItemActive' : 'navItem'}>
           <Link to="/my-budget">My Budget</Link>
         </li>
-        <li className={props.myBudget ? 'navIcono navItemActive' : 'navIcon'}>
+        <li className={props.myBudget ? 'navIcon navItemActive' : 'navIcon'}>
           <Link to="/my-budget">
             {' '}
             <PieChartOutlined />{' '}

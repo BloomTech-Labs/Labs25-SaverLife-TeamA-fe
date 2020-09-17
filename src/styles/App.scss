@@ -4,6 +4,7 @@ $primary: #c01089;
 @import url(//db.onlinewebfonts.com/c/2090551770be22b09600a40b0b4673b7?family=Avenir+Medium);
 @import '~bootstrap/scss/bootstrap';
 
+
 * {
     box-sizing: border-box;
 }
@@ -89,43 +90,18 @@ button {
     box-shadow: 0px 0px 2.5px rgba(255, 255, 255, 0.9);
 }
 
-.switchButton {
+.lightSwitchContainer {
     display: flex;
+
     align-items: center;
     position: fixed;
-    margin-top: 5px;
-    padding-left: 8px;
-    right: 10%;
-    border-radius: 10px;
-    font-size: 1rem;
+    right: 15%;
+    top: 80px;
 }
 
 .bulbIcon {
     margin-left: 5px;
-}
-
-.light-mode .switchButton {
-    color: #c01089;
-    border: solid 2px #c01089;
-    background-color: #ffffff
-}
-
-.light-mode .switchButton:hover {
-    color: #ecb7db;
-    border: solid 2px #ecb7db;
-    background-color: black;
-}
-
-.dark-mode .switchButton {
-    color: #ecb7db;
-    border: solid 2px #ecb7db;
-    background-color: black;
-}
-
-.dark-mode .switchButton:hover {
-    color: #c01089;
-    border: solid 2px #c01089;
-    background-color: #ffffff;
+    font-size: 1.5rem;
 }
 
 // NavBar Styles //
