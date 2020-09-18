@@ -9,7 +9,7 @@ import { Navbar, GoalProgressBar } from '../../common/index';
 
 import '../../../styles/App.scss';
 
-function RenderHomePage(props) {
+function RenderMyBudgetPage(props) {
   const { authService } = props;
 
   const dispatch = useDispatch();
@@ -40,11 +40,11 @@ function RenderHomePage(props) {
       }
     >
       <div className="navContainer">
-        <Navbar home={true} authService={authService} />
+        <Navbar myBudget={true} authService={authService} />
       </div>
 
       <div className="headerText">
-        <h2 className="pageHeader">My Home</h2>
+        <h2 className="pageHeader">My Budget</h2>
 
         <Tooltip
           className="tooltipHeader"
@@ -70,7 +70,12 @@ function RenderHomePage(props) {
 
       <div className="contentContainer">
         <div className="borderBox">
-          <p>Content Goes Here</p>
+          <div className="budgetComparison">
+            <BudgetComparisonContainer
+              categoryGoals={futureBudget}
+              categoryCurrent={currentMonthlySpending}
+            />
+          </div>
         </div>
       </div>
 
@@ -81,4 +86,4 @@ function RenderHomePage(props) {
     </div>
   );
 }
-export default RenderHomePage;
+export default RenderMyBudgetPage;

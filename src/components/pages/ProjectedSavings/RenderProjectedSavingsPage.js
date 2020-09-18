@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import { Tooltip } from 'antd';
-import { QuestionCircleOutlined, BulbFilled } from '@ant-design/icons';
+import { Tooltip, Switch } from 'antd';
+import { QuestionCircleOutlined, BulbTwoTone } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getNetIncomeAction } from '../../../actionCreators/mainActions.js';
@@ -63,7 +63,7 @@ const RenderProjectedSavingsPage = props => {
       </div>
 
       <div className="headerText">
-        <h2 className="pageHeader">Past Spending</h2>
+        <h2 className="pageHeader">Projected Savings</h2>
 
         <Tooltip
           className="tooltipHeader"
@@ -73,13 +73,18 @@ const RenderProjectedSavingsPage = props => {
           <QuestionCircleOutlined />
         </Tooltip>
 
-        <button
-          className="switchButton"
-          onClick={() => setDarkMode(prevMode => !prevMode)}
-        >
-          {darkMode ? 'Light Mode' : 'Dark Mode'}
-          <BulbFilled className="bulbIcon" />
-        </button>
+        <div className="lightSwitchContainer">
+          <Switch
+            className="lightSwitch"
+            checked={darkMode}
+            onChange={() => setDarkMode(prevMode => !prevMode)}
+            size="small"
+          />
+          <BulbTwoTone
+            twoToneColor={darkMode ? '#ecb7db' : '#1a1919'}
+            className="bulbIcon"
+          />
+        </div>
       </div>
 
       <div className="contentContainer">

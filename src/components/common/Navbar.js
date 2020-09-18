@@ -19,15 +19,28 @@ const Navbar = props => {
           alt="SaverLife Logo"
         />
       </div>
+
       <ol className="navBarList">
         <li className={props.home ? 'navItem navItemActive' : 'navItem'}>
           <Link to="/">Home</Link>
         </li>
         <li className={props.home ? 'navIcon navItemActive' : 'navIcon'}>
           <Link to="/">
-            <HomeOutlined />
+            {' '}
+            <HomeOutlined />{' '}
           </Link>
         </li>
+
+        <li className={props.myBudget ? 'navItem navItemActive' : 'navItem'}>
+          <Link to="/my-budget">My Budget</Link>
+        </li>
+        <li className={props.myBudget ? 'navIcon navItemActive' : 'navIcon'}>
+          <Link to="/my-budget">
+            {' '}
+            <PieChartOutlined />{' '}
+          </Link>
+        </li>
+
         <li
           className={props.pastSpending ? 'navItem navItemActive' : 'navItem'}
         >
@@ -37,17 +50,11 @@ const Navbar = props => {
           className={props.pastSpending ? 'navIcon navItemActive' : 'navIcon'}
         >
           <Link to="/past-spending">
-            <BarChartOutlined />
+            {' '}
+            <BarChartOutlined />{' '}
           </Link>
         </li>
-        <li className="navItem">
-          <Link to="/">Budget Comparison</Link>
-        </li>
-        <li className="navIcon">
-          <Link to="/">
-            <PieChartOutlined />
-          </Link>
-        </li>
+
         <li
           className={
             props.projectedSavings ? 'navItem navItemActive' : 'navItem'
@@ -61,15 +68,18 @@ const Navbar = props => {
           }
         >
           <Link to="/projected-savings">
-            <LineChartOutlined />
+            {' '}
+            <LineChartOutlined />{' '}
           </Link>
         </li>
+
         <li className={props.myAccount ? 'navItem navItemActive' : 'navItem'}>
           <Link to="/my-account">My Account</Link>
         </li>
         <li className={props.myAccount ? 'navIcon navItemActive' : 'navIcon'}>
           <Link to="/my-account">
-            <UserOutlined />
+            {' '}
+            <UserOutlined />{' '}
           </Link>
         </li>
       </ol>
