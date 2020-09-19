@@ -18,6 +18,7 @@ export const getBudgetAction = () => dispatch => {
 
   let futureBudget = {};
   let currentSpending = {};
+  let categories = [];
   axios
     .post('https://saverlife-a-api.herokuapp.com/data/future_budget', {
       user_id: userId,
@@ -27,10 +28,13 @@ export const getBudgetAction = () => dispatch => {
     .then(response => {
       // console.log(response.data)
       futureBudget = response.data;
+      categories = Object.keys(response.data);
+      console.log(categories);
       // console.log('request complete');
       axios
-        .get(
-          `https://saverlife-a-api.herokuapp.com/data/current_month_spending/${userId}`
+        .post(
+          `https://saverlife-a-api.herokuapp.com/data/current_month_spending/${userId}`,
+          { categories }
         )
         .then(response => {
           // console.log(response.data)
