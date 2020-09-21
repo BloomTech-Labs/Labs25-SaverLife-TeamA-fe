@@ -68,10 +68,6 @@ export const getSpendingBarAction = () => dispatch => {
           ...spendingLayout,
           plot_bgcolor: 'rgba(0, 0, 0, 0)',
           paper_bgcolor: 'rgba(0, 0, 0, 0)',
-          title: { ...spendingLayout.title, font: { color: '#777777' } },
-          xaxis: { ...spendingLayout.xaxis, color: '#777777' },
-          yaxis: { ...spendingLayout.yaxix, color: '#777777' },
-          legend: { ...spendingLayout.legend, font: { color: '#777777' } },
         },
       });
     });
@@ -95,8 +91,6 @@ export const getSpendingDonutAction = () => dispatch => {
           ...donutLayout,
           plot_bgcolor: 'rgba(0, 0, 0, 0)',
           paper_bgcolor: 'rgba(0, 0, 0, 0)',
-          title: { ...donutLayout.title, font: { color: '#777777' } },
-          legend: { ...donutLayout.legend, font: { color: '#777777' } },
         },
       });
     });
@@ -119,9 +113,6 @@ export const getNetIncomeAction = () => dispatch => {
           ...moneyFlowLayout,
           plot_bgcolor: 'rgba(0, 0, 0, 0)',
           paper_bgcolor: 'rgba(0, 0, 0, 0)',
-          title: { ...moneyFlowLayout.title, font: { color: '#777777' } },
-          xaxis: { ...moneyFlowLayout.xaxis, color: '#777777' },
-          yaxis: { ...moneyFlowLayout.yaxix, color: '#777777' },
         },
       });
     });
