@@ -13,6 +13,18 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Avenir Medium'
 }
 
+.legendtitletext, .legendtext, .annotation-text, .gtitle, .xtitle, .ytick text, .xtick text {
+    fill: red !important;
+}
+
+.xlines-above, .ylines-above, .ticks, .legendundefined, .legendpie {
+    stroke: red !important;
+}
+
+.scrollbox {
+    padding-top: 15px;
+}
+
 .main-svg {
     background: none;
 }
