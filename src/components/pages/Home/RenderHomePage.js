@@ -62,7 +62,7 @@ function RenderHomePage(props) {
             size="small"
           />
           <BulbTwoTone
-            twoToneColor={darkMode ? '#ecb7db' : '#1a1919'}
+            twoToneColor={darkMode ? '#ecb7db' : '#808080'}
             className="bulbIcon"
           />
         </div>
