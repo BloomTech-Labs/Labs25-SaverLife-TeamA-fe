@@ -98,6 +98,9 @@ const RenderPastSpendingPage = props => {
 
       <div className="contentContainer">
         <div className="spendingChart barChart">
+          <h5 className="chartTitle1">
+            Daily Spending by Category for the Last Week
+          </h5>
           <Plot
             data={spendingBarData}
             config={{ displayModeBar: false }}
@@ -105,6 +108,9 @@ const RenderPastSpendingPage = props => {
           />
         </div>
         <div className="spendingChart donutChart">
+          <h5 className="chartTitle2">
+            Daily Spending by Category for the Last Week
+          </h5>
           <Plot
             data={spendingDonutData}
             config={{ displayModeBar: false }}

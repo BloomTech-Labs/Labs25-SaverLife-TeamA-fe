@@ -88,11 +88,14 @@ const RenderProjectedSavingsPage = props => {
       </div>
 
       <div className="contentContainer">
-        <Plot
-          data={netIncomeData}
-          layout={{ ...netIncomeLayout, ...dimensions }}
-          config={{ displayModeBar: false }}
-        />
+        <div className="projectedChart">
+          <h5 className="chartTitle2">Daily Net Income for the Last Month</h5>
+          <Plot
+            data={netIncomeData}
+            layout={{ ...netIncomeLayout, ...dimensions }}
+            config={{ displayModeBar: false }}
+          />
+        </div>
       </div>
 
       <div className="progressBarContainer">
