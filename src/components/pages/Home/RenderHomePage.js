@@ -3,7 +3,7 @@ import { Tooltip, Switch } from 'antd';
 import { QuestionCircleOutlined, BulbTwoTone } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getBudgetAction } from '../../../actionCreators/mainActions.js';
+import { getDashboard } from '../../../actionCreators/mainActions.js';
 import BudgetComparisonContainer from '../../charts/BudgetComparison/BudgetComparisonContainer';
 import { Navbar, GoalProgressBar } from '../../common/index';
 
@@ -19,7 +19,7 @@ function RenderHomePage(props) {
   );
 
   useEffect(() => {
-    dispatch(getBudgetAction());
+    dispatch(getDashboard());
   }, []);
 
   const [darkMode, setDarkMode] = React.useState(getMode);
@@ -62,7 +62,7 @@ function RenderHomePage(props) {
             size="small"
           />
           <BulbTwoTone
-            twoToneColor={darkMode ? '#ecb7db' : '#1a1919'}
+            twoToneColor={darkMode ? '#ecb7db' : '#808080'}
             className="bulbIcon"
           />
         </div>

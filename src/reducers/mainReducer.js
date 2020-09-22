@@ -8,12 +8,14 @@ import {
   SET_USER_NAME,
   SET_USER_EMAIL,
   SET_USER_PHONE,
+  GET_DASHBOARD,
   SET_USER_PASSWORD,
 } from '../actionCreators/mainActions';
 
 const initialState = {
   currentMonthlySpending: {},
   futureBudget: {},
+  dashboard: {},
   data: {
     spendingBar: {},
     netIncome: {},
@@ -66,8 +68,7 @@ export const mainReducer = (state = initialState, action) => {
             ...action.layout,
             width: 475,
             height: 475,
-            title: '',
-            legend: { x: 0.25, y: 0.25 },
+            legend: { x: 0.25, y: 0.15 },
           },
         },
       };
@@ -129,6 +130,11 @@ export const mainReducer = (state = initialState, action) => {
           ...state.user,
           password: action.password,
         },
+      };
+    case GET_DASHBOARD:
+      return {
+        ...state,
+        dashboard: action.payload,
       };
     default:
       return state;

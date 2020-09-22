@@ -90,7 +90,7 @@ const RenderPastSpendingPage = props => {
             size="small"
           />
           <BulbTwoTone
-            twoToneColor={darkMode ? '#ecb7db' : '#1a1919'}
+            twoToneColor={darkMode ? '#ecb7db' : '#808080'}
             className="bulbIcon"
           />
         </div>
@@ -98,6 +98,9 @@ const RenderPastSpendingPage = props => {
 
       <div className="contentContainer">
         <div className="spendingChart barChart">
+          <h5 className="chartTitle1">
+            Daily Spending by Category for the Last Week
+          </h5>
           <Plot
             data={spendingBarData}
             config={{ displayModeBar: false }}
@@ -105,6 +108,9 @@ const RenderPastSpendingPage = props => {
           />
         </div>
         <div className="spendingChart donutChart">
+          <h5 className="chartTitle2">
+            Spending by Category for the Last Month
+          </h5>
           <Plot
             data={spendingDonutData}
             config={{ displayModeBar: false }}

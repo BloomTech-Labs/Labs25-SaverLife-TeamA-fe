@@ -7,16 +7,24 @@ import {
   LineChartOutlined,
   PieChartOutlined,
 } from '@ant-design/icons';
+import SaverLifeDM from './media/SaverLifeDM.png';
 
 import '../../styles/App.scss';
+import { Media } from 'react-bootstrap';
 
 const Navbar = props => {
   return (
     <nav className="navBar">
       <div className="logo">
         <img
+          className="logoLM"
           src="https://www.saverlife.org/assets/logo-saverlife-a4b213a1d9e8e51559d7f70d9f479f1473f536e12c8c4543654d5b3964004b0f.svg"
           alt="SaverLife Logo"
+        />
+        <img
+          className="logoDM"
+          src={SaverLifeDM}
+          alt="SaverLife Logo Dark Mode"
         />
       </div>
 
@@ -55,19 +63,11 @@ const Navbar = props => {
           </Link>
         </li>
 
-        <li
-          className={
-            props.projectedSavings ? 'navItem navItemActive' : 'navItem'
-          }
-        >
-          <Link to="/projected-savings">Projected Savings</Link>
+        <li className={props.netIncome ? 'navItem navItemActive' : 'navItem'}>
+          <Link to="/net-income">Net Income</Link>
         </li>
-        <li
-          className={
-            props.projectedSavings ? 'navIcon navItemActive' : 'navIcon'
-          }
-        >
-          <Link to="/projected-savings">
+        <li className={props.netIncome ? 'navIcon navItemActive' : 'navIcon'}>
+          <Link to="/net-income">
             {' '}
             <LineChartOutlined />{' '}
           </Link>

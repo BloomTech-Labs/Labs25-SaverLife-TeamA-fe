@@ -12,6 +12,7 @@ export const SET_USER_NAME = 'set_user_name';
 export const SET_USER_EMAIL = 'set_user_email';
 export const SET_USER_PHONE = 'set_user_phone';
 export const SET_USER_PASSWORD = 'set_user_password';
+export const GET_DASHBOARD = 'get_dashboard';
 
 export const getBudgetAction = () => dispatch => {
   const userId = getEmail();
@@ -68,11 +69,6 @@ export const getSpendingBarAction = () => dispatch => {
           ...spendingLayout,
           plot_bgcolor: 'rgba(0, 0, 0, 0)',
           paper_bgcolor: 'rgba(0, 0, 0, 0)',
-          title: { ...spendingLayout.title, font: { color: '#ffffff' } },
-          xaxis: { ...spendingLayout.xaxis, color: '#ffffff' },
-          yaxis: { ...spendingLayout.yaxix, color: '#ffffff' },
-          legend: { ...spendingLayout.legend, font: { color: '#ffffff' } },
-          annotations: { ...spendingLayout.legend, font: { color: '#ffffff' } },
         },
       });
     });
@@ -96,8 +92,6 @@ export const getSpendingDonutAction = () => dispatch => {
           ...donutLayout,
           plot_bgcolor: 'rgba(0, 0, 0, 0)',
           paper_bgcolor: 'rgba(0, 0, 0, 0)',
-          title: { ...donutLayout.title, font: { color: '#ffffff' } },
-          legend: { ...donutLayout.legend, font: { color: '#ffffff' } },
         },
       });
     });
@@ -120,9 +114,6 @@ export const getNetIncomeAction = () => dispatch => {
           ...moneyFlowLayout,
           plot_bgcolor: 'rgba(0, 0, 0, 0)',
           paper_bgcolor: 'rgba(0, 0, 0, 0)',
-          title: { ...moneyFlowLayout.title, font: { color: '#ffffff' } },
-          xaxis: { ...moneyFlowLayout.xaxis, color: '#ffffff' },
-          yaxis: { ...moneyFlowLayout.yaxix, color: '#ffffff' },
         },
       });
     });
@@ -166,4 +157,17 @@ export const setUserPassword = password => dispatch => {
     type: SET_USER_PASSWORD,
     password,
   });
+};
+
+export const getDashboard = () => dispatch => {
+  // const userId = getEmail();
+
+  axios
+    .get(
+      'http://saverlife-a.eba-atdfhqrp.us-east-1.elasticbeanstalk.com/dashboard/183004'
+    )
+    .then(response => {
+      console.log(JSON.parse(JSON.parse(response.data)[0]));
+      console.log(JSON.parse(response.data));
+    });
 };

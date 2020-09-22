@@ -10,7 +10,7 @@ import { Navbar, GoalProgressBar } from '../../common/index';
 
 import '../../../styles/App.scss';
 
-const RenderProjectedSavingsPage = props => {
+const RenderNetIncomePage = props => {
   const netIncomeData = useSelector(state => state.data.netIncome);
   const netIncomeLayout = useSelector(state => state.layout.netIncome);
   const dispatch = useDispatch();
@@ -59,11 +59,11 @@ const RenderProjectedSavingsPage = props => {
       }
     >
       <div className="navContainer">
-        <Navbar projectedSavings={true} authService={authService} />
+        <Navbar netIncome={true} authService={authService} />
       </div>
 
       <div className="headerText">
-        <h2 className="pageHeader">Projected Savings</h2>
+        <h2 className="pageHeader">Net Income</h2>
 
         <Tooltip
           className="tooltipHeader"
@@ -81,18 +81,21 @@ const RenderProjectedSavingsPage = props => {
             size="small"
           />
           <BulbTwoTone
-            twoToneColor={darkMode ? '#ecb7db' : '#1a1919'}
+            twoToneColor={darkMode ? '#ecb7db' : '#808080'}
             className="bulbIcon"
           />
         </div>
       </div>
 
       <div className="contentContainer">
-        <Plot
-          data={netIncomeData}
-          layout={{ ...netIncomeLayout, ...dimensions }}
-          config={{ displayModeBar: false }}
-        />
+        <div className="netIncomeChart">
+          <h5 className="chartTitle2">Daily Net Income for the Last Month</h5>
+          <Plot
+            data={netIncomeData}
+            layout={{ ...netIncomeLayout, ...dimensions }}
+            config={{ displayModeBar: false }}
+          />
+        </div>
       </div>
 
       <div className="progressBarContainer">
@@ -102,4 +105,4 @@ const RenderProjectedSavingsPage = props => {
   );
 };
 
-export default RenderProjectedSavingsPage;
+export default RenderNetIncomePage;

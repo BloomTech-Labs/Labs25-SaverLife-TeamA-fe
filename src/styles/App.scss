@@ -17,6 +17,10 @@ h1, h2, h3, h4, h5, h6 {
     background: none;
 }
 
+.gtitle {
+    display: none;
+}
+
 button {
     font-family: 'Circular Std Black';
 }
@@ -34,12 +38,16 @@ button {
 
 // Light-Dark Mode //
 
+.light-mode .logoDM {
+    display: none;
+}
+
 .light-mode, .light-mode .headerText {
     background-color: #ffffff;
     color: black;  
 }
 
-.light-mode h2, .light-mode h4, .lightmode h6 {
+.light-mode h2, .light-mode h4, .light-mode h5, .light-mode h6 {
     color: black;
 }
 
@@ -58,6 +66,18 @@ button {
     box-shadow: 0px 0px 2.5px rgba(0, 10, 10, 0.25);
 }
 
+.light-mode .legendtitletext, .light-mode .legendtext, .light-mode .annotation-text, .light-mode .gtitle, .light-mode .xtitle, .light-mode .ytitle, .light-mode .ytick text, .light-mode .xtick text {
+    fill: black !important;
+}
+
+.light-mode .xlines-above, .light-mode .ylines-above, .light-mode .ticks, .light-mode .legendundefined, .light-mode .legendpie {
+    stroke: black !important;
+}
+
+.dark-mode .logoLM {
+    display: none;
+}
+
 .dark-mode, .dark-mode .headerText {
     background-color: #1a1919;
     color: #ffffff;  
@@ -67,7 +87,7 @@ button {
     background-color: #1a1919;
 }
 
-.dark-mode h2, .dark-mode h4, .dark-mode h6 {
+.dark-mode h2, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
     color: #ffffff
 }
 
@@ -88,6 +108,14 @@ button {
 .dark-mode .profile {
     background-color: #1a1919;
     box-shadow: 0px 0px 2.5px rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .legendtitletext, .dark-mode .legendtext, .dark-mode .annotation-text, .dark-mode .gtitle, .dark-mode .xtitle, .dark-mode .ytitle, .dark-mode .ytick text, .dark-mode .xtick text {
+    fill: #ffffff !important;
+}
+
+.dark-mode .xlines-above, .dark-mode .ylines-above, .dark-mode .ticks, .dark-mode .legendundefined, .dark-mode .legendpie {
+    stroke: #ffffff !important;
 }
 
 .lightSwitchContainer {
@@ -127,6 +155,10 @@ button {
     margin-left: 10px;
 }
 
+.logoDM {
+    width: 160px;
+}
+
 .navBarList {
     list-style-type: none;
     width: 70%;
@@ -140,17 +172,18 @@ button {
 
 .navItem a {
     font-weight: 500;
-    color: #c01089;
+    color: #ecb7db;
 }
 
 .navItem a:hover {
-    color: #ecb7db;
+    color: #c01089;
     text-decoration: none;
     padding-bottom: 18px;
-    border-bottom: 2.5px solid #ecb7db;
+    border-bottom: 2.5px solid #c01089;
 }
 
 .navItemActive a {
+    color: #c01089;
     padding-bottom: 18px;
     border-bottom: 2.5px solid #c01089;
 }
@@ -221,10 +254,30 @@ button {
     margin-left: .5vw;
 }
 
-.spendingChart {
+.spendingChart, .netIncomeChart {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
+}
+
+.netIncomeChart {
+    margin-top: 50px;
+}
+
+.donutChart {
+    margin-top: 50px;
+}
+
+.chartTitle1 {
+    margin-top: 50px;
+    margin-bottom: -40px;
+}
+
+.chartTitle2 {
+    margin-top: 50xp;
+    margin-bottom: -80px;
 }
 
 .budgetComparison {
