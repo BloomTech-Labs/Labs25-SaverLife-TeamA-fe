@@ -254,7 +254,7 @@ button {
     margin-left: .5vw;
 }
 
-.spendingChart, .projectedChart {
+.spendingChart, .netIncomeChart {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -262,7 +262,7 @@ button {
     width: 100%;
 }
 
-.projectedChart {
+.netIncomeChart {
     margin-top: 50px;
 }
 

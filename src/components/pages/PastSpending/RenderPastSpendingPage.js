@@ -109,7 +109,7 @@ const RenderPastSpendingPage = props => {
         </div>
         <div className="spendingChart donutChart">
           <h5 className="chartTitle2">
-            Daily Spending by Category for the Last Week
+            Spending by Category for the Last Month
           </h5>
           <Plot
             data={spendingDonutData}

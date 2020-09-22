@@ -12,6 +12,7 @@ export const SET_USER_NAME = 'set_user_name';
 export const SET_USER_EMAIL = 'set_user_email';
 export const SET_USER_PHONE = 'set_user_phone';
 export const SET_USER_PASSWORD = 'set_user_password';
+export const GET_DASHBOARD = 'get_dashboard';
 
 export const getBudgetAction = () => dispatch => {
   const userId = getEmail();
@@ -156,4 +157,17 @@ export const setUserPassword = password => dispatch => {
     type: SET_USER_PASSWORD,
     password,
   });
+};
+
+export const getDashboard = () => dispatch => {
+  // const userId = getEmail();
+
+  axios
+    .get(
+      'http://saverlife-a.eba-atdfhqrp.us-east-1.elasticbeanstalk.com/dashboard/183004'
+    )
+    .then(response => {
+      console.log(JSON.parse(JSON.parse(response.data)[0]));
+      console.log(JSON.parse(response.data));
+    });
 };

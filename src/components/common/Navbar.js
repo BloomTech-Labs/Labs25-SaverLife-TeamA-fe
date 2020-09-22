@@ -63,19 +63,11 @@ const Navbar = props => {
           </Link>
         </li>
 
-        <li
-          className={
-            props.projectedSavings ? 'navItem navItemActive' : 'navItem'
-          }
-        >
-          <Link to="/projected-savings">Projected Savings</Link>
+        <li className={props.netIncome ? 'navItem navItemActive' : 'navItem'}>
+          <Link to="/net-income">Net Income</Link>
         </li>
-        <li
-          className={
-            props.projectedSavings ? 'navIcon navItemActive' : 'navIcon'
-          }
-        >
-          <Link to="/projected-savings">
+        <li className={props.netIncome ? 'navIcon navItemActive' : 'navIcon'}>
+          <Link to="/net-income">
             {' '}
             <LineChartOutlined />{' '}
           </Link>
