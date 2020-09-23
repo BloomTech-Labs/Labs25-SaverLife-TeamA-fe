@@ -14,6 +14,10 @@ const RenderNetIncomePage = props => {
   const netIncomeData = useSelector(state => state.data.netIncome);
   const netIncomeLayout = useSelector(state => state.layout.netIncome);
   const dispatch = useDispatch();
+  const futureBudget = useSelector(state => state.futureBudget);
+  const currentMonthlySpending = useSelector(
+    state => state.currentMonthlySpending
+  );
   let width =
     window.innerWidth < 800 ? window.innerWidth : window.innerWidth * 0.8;
   let height = window.innerHeight * 0.7;
@@ -99,7 +103,10 @@ const RenderNetIncomePage = props => {
       </div>
 
       <div className="progressBarContainer">
-        <GoalProgressBar />
+        <GoalProgressBar
+          categoryGoals={futureBudget}
+          categoryCurrent={currentMonthlySpending}
+        />
       </div>
     </div>
   );

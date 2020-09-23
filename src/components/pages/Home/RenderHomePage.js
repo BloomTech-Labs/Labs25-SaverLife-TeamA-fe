@@ -4,7 +4,6 @@ import { QuestionCircleOutlined, BulbTwoTone } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getDashboard } from '../../../actionCreators/mainActions.js';
-import BudgetComparisonContainer from '../../charts/BudgetComparison/BudgetComparisonContainer';
 import { Navbar, GoalProgressBar } from '../../common/index';
 import TransactionsTable from './TransactionsTable';
 
@@ -15,6 +14,10 @@ function RenderHomePage(props) {
 
   const dispatch = useDispatch();
   const transactions = useSelector(state => state.dashboard.transactions);
+  const futureBudget = useSelector(state => state.futureBudget);
+  const currentMonthlySpending = useSelector(
+    state => state.currentMonthlySpending
+  );
 
   useEffect(() => {
     dispatch(getDashboard());
@@ -74,7 +77,10 @@ function RenderHomePage(props) {
 
       <div className="progressBarContainer">
         {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
-        <GoalProgressBar />
+        <GoalProgressBar
+          categoryGoals={futureBudget}
+          categoryCurrent={currentMonthlySpending}
+        />
       </div>
     </div>
   );
