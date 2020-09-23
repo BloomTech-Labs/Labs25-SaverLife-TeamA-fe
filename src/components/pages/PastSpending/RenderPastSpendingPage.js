@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   getSpendingBarAction,
   getSpendingDonutAction,
+  getBudgetAction,
 } from '../../../actionCreators/mainActions.js';
 import Plot from 'react-plotly.js';
 import { Navbar, GoalProgressBar } from '../../common/index';
@@ -17,6 +18,10 @@ const RenderPastSpendingPage = props => {
   const { authService } = props;
 
   const dispatch = useDispatch();
+  const futureBudget = useSelector(state => state.futureBudget);
+  const currentMonthlySpending = useSelector(
+    state => state.currentMonthlySpending
+  );
   const spendingBarData = useSelector(state => state.data.spendingBar);
   let spendingBarLayout = useSelector(state => state.layout.spendingBar);
   const spendingDonutData = useSelector(state => state.data.spendingDonut);
@@ -36,6 +41,7 @@ const RenderPastSpendingPage = props => {
   useEffect(() => {
     dispatch(getSpendingBarAction());
     dispatch(getSpendingDonutAction());
+    dispatch(getBudgetAction());
   }, []);
 
   useEffect(() => {
@@ -122,7 +128,10 @@ const RenderPastSpendingPage = props => {
 
       <div className="progressBarContainer">
         {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
-        <GoalProgressBar />
+        <GoalProgressBar
+          categoryGoals={futureBudget}
+          categoryCurrent={currentMonthlySpending}
+        />
       </div>
     </div>
   );

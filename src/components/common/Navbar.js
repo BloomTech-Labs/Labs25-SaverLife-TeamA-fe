@@ -10,7 +10,6 @@ import {
 import SaverLifeDM from './media/SaverLifeDM.png';
 
 import '../../styles/App.scss';
-import { Media } from 'react-bootstrap';
 
 const Navbar = props => {
   return (

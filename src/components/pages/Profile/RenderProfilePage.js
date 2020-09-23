@@ -10,12 +10,21 @@ import {
   setUserEmail,
   setUserPhone,
   setUserPassword,
+  getBudgetAction,
 } from '../../../actionCreators/mainActions.js';
 
 import '../../../styles/App.scss';
 
 const RenderProfilePage = props => {
   const { authService } = props;
+  const getEmail = () => {
+    return JSON.parse(localStorage.getItem('okta-token-storage')).idToken.claims
+      .email;
+  };
+  const getName = () => {
+    return JSON.parse(localStorage.getItem('okta-token-storage')).idToken.claims
+      .name;
+  };
 
   const dispatch = useDispatch();
   const isEditing = useSelector(state => state.user.isEditing);
@@ -35,6 +44,11 @@ const RenderProfilePage = props => {
   let password = '';
   let confirmedPassword = '';
 
+  const futureBudget = useSelector(state => state.futureBudget);
+  const currentMonthlySpending = useSelector(
+    state => state.currentMonthlySpending
+  );
+
   const passwordCheck = () => {
     if (password === confirmedPassword) {
       dispatch(setUserPassword(confirmedPassword));
@@ -48,7 +62,11 @@ const RenderProfilePage = props => {
     dispatch(getUser());
   }, [dispatch]);
 
-  const [darkMode, setDarkMode] = React.useState(getMode);
+  useEffect(() => {
+    dispatch(getBudgetAction());
+  }, []);
+
+  const [darkMode] = React.useState(getMode);
 
   useEffect(() => {
     localStorage.setItem('dark', JSON.stringify(darkMode));
@@ -77,8 +95,8 @@ const RenderProfilePage = props => {
             alt="avatar"
           />
           <div className={userInfoContainer}>
-            <h2 className="userInfo">{user.name}</h2>
-            <h4 className="userInfo">{user.email}</h4>
+            <h2 className="userInfo">{getName()}</h2>
+            <h4 className="userInfo">{getEmail()}</h4>
             <h4 className="userInfo">{user.phone}</h4>
           </div>
           <div className={userInfoEditingContainer}>
@@ -130,7 +148,10 @@ const RenderProfilePage = props => {
       </div>
 
       <div className="progressBarContainer">
-        <GoalProgressBar />
+        <GoalProgressBar
+          categoryGoals={futureBudget}
+          categoryCurrent={currentMonthlySpending}
+        />
       </div>
     </div>
   );

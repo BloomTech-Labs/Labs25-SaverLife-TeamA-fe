@@ -69,7 +69,7 @@ function RenderMyBudgetPage(props) {
       </div>
 
       <div className="contentContainer">
-        <div className="borderBox">
+        <div className="borderBox budget">
           <div className="budgetComparison">
             <BudgetComparisonContainer
               categoryGoals={futureBudget}
@@ -81,7 +81,10 @@ function RenderMyBudgetPage(props) {
 
       <div className="progressBarContainer">
         {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
-        <GoalProgressBar />
+        <GoalProgressBar
+          categoryGoals={futureBudget}
+          categoryCurrent={currentMonthlySpending}
+        />
       </div>
     </div>
   );

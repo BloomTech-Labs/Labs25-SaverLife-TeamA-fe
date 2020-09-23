@@ -74,6 +74,19 @@ button {
     stroke: black !important;
 }
 
+.light-mode .dashboardHeader {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .15);
+}
+
+.light-mode .subContent {
+    background-color: #ffffff;
+}
+
+.light-mode .subContentHeaders {
+    background-color: lightgray
+}
+
 .dark-mode .logoLM {
     display: none;
 }
@@ -107,7 +120,7 @@ button {
 
 .dark-mode .profile {
     background-color: #1a1919;
-    box-shadow: 0px 0px 2.5px rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 2.5px rgba(255, 255, 255, .9);
 }
 
 .dark-mode .legendtitletext, .dark-mode .legendtext, .dark-mode .annotation-text, .dark-mode .gtitle, .dark-mode .xtitle, .dark-mode .ytitle, .dark-mode .ytick text, .dark-mode .xtick text {
@@ -116,6 +129,23 @@ button {
 
 .dark-mode .xlines-above, .dark-mode .ylines-above, .dark-mode .ticks, .dark-mode .legendundefined, .dark-mode .legendpie {
     stroke: #ffffff !important;
+}
+
+.dark-mode .dashboardHeader {
+    background-color: #1a1919;
+    box-shadow: 0px 0px 2.5px rgba(255, 255, 255, .9);
+}
+
+.dark-mode .subContent {
+    background-color: #1a1919;
+}
+
+.dark-mode .subContentHeaders {
+    background-color: black
+}
+
+.dark-mode .MuiTableCell-head, .dark-mode .MuiTableCell-body {
+    color: white;  
 }
 
 .lightSwitchContainer {
@@ -234,9 +264,27 @@ button {
     align-items: center;
     width: 90%;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, .15);
-    margin-top: 10px;
     padding: 20px 0px 10px 0px;
+}
+
+.budget {
+    margin-top: 20px;
+}
+
+.dashboardHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding: 25px 0px 10px 0px;
+    margin-top: -20px;
+    border-radius: 10px 10px 0px 0px;
+    position: fixed;
+    z-index: 1;
+}
+
+.tableContainer {
+    margin-top: 85px;
 }
 
 .headerText{
@@ -295,12 +343,12 @@ h6 {
 }
 
 .individualBar {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     width: 90%;
 }
 
 .budgetBar {
-    height: 25px;
+    height: 30px;
     margin-top: 3px;
 }
 
@@ -453,10 +501,6 @@ h6 {
     .navContainer {
         position: fixed;
         bottom: 0;
-    }
-
-    .pageContainer {
-        flex-direction: column-reverse;
     }
 
     .logo {
