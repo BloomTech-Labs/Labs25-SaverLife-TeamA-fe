@@ -37,7 +37,7 @@ const TransactionsTable = props => {
     <>
       <div className="dashboardHeader">
         <p>
-          Spend Earn Ratio: ${spendEarnRatio} | Account Type: {accountType} |
+          Spend Earn Ratio: {spendEarnRatio}1.05 | Account Type: {accountType} |
           Current Balance: ${currentBalance}
         </p>
         <h5>Last Week's Transactions</h5>

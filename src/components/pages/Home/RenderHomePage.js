@@ -3,7 +3,10 @@ import { Tooltip, Switch } from 'antd';
 import { QuestionCircleOutlined, BulbTwoTone } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getDashboard } from '../../../actionCreators/mainActions.js';
+import {
+  getDashboard,
+  getBudgetAction,
+} from '../../../actionCreators/mainActions.js';
 import { Navbar, GoalProgressBar } from '../../common/index';
 import TransactionsTable from './TransactionsTable';
 
@@ -14,6 +17,7 @@ function RenderHomePage(props) {
 
   const dispatch = useDispatch();
   const transactions = useSelector(state => state.dashboard.transactions);
+  // NEED LINES 18 and 19 for PROGRESS BAR
   const futureBudget = useSelector(state => state.futureBudget);
   const currentMonthlySpending = useSelector(
     state => state.currentMonthlySpending
@@ -21,6 +25,8 @@ function RenderHomePage(props) {
 
   useEffect(() => {
     dispatch(getDashboard());
+    // NEED THIS FOR PROGRESS BAR
+    dispatch(getBudgetAction());
   }, []);
 
   const [darkMode, setDarkMode] = React.useState(getMode);
@@ -76,7 +82,7 @@ function RenderHomePage(props) {
       </div>
 
       <div className="progressBarContainer">
-        {/* TODO: Change Progress Bar to #00a6af when percent is at 100 */}
+        {/* NEED THIS CODE FOR PROGRESS BAR */}
         <GoalProgressBar
           categoryGoals={futureBudget}
           categoryCurrent={currentMonthlySpending}
