@@ -68,7 +68,7 @@ const RenderNetIncomePage = props => {
         <Tooltip
           className="tooltipHeader"
           placement="bottom"
-          title="What do you want others to call you?"
+          title="Your account balance total daily changes, shown monthly"
         >
           <QuestionCircleOutlined />
         </Tooltip>

@@ -77,7 +77,7 @@ const RenderPastSpendingPage = props => {
         <Tooltip
           className="tooltipHeader"
           placement="bottom"
-          title="What do you want others to call you?"
+          title="Your Past Spending habits for the past week, organized by category"
         >
           <QuestionCircleOutlined />
         </Tooltip>
