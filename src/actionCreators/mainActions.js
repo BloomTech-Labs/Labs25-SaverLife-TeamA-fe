@@ -13,6 +13,7 @@ export const SET_USER_EMAIL = 'set_user_email';
 export const SET_USER_PHONE = 'set_user_phone';
 export const SET_USER_PASSWORD = 'set_user_password';
 export const GET_DASHBOARD = 'get_dashboard';
+export const GET_COLOR = 'get_color';
 
 export const getBudgetAction = () => dispatch => {
   const userId = getEmail();
@@ -160,14 +161,85 @@ export const setUserPassword = password => dispatch => {
 };
 
 export const getDashboard = () => dispatch => {
-  // const userId = getEmail();
+  const user_id = getEmail();
 
   axios
-    .get(
-      'http://saverlife-a.eba-atdfhqrp.us-east-1.elasticbeanstalk.com/dashboard/183004'
-    )
+    .get(`https://saverlife-a-api.herokuapp.com/data/dashboard/${user_id}`)
     .then(response => {
-      console.log(JSON.parse(JSON.parse(response.data)[0]));
-      console.log(JSON.parse(response.data));
+      let parsed = JSON.parse(response.data);
+      const payload = {
+        transactions: JSON.parse(parsed[0]),
+        spendEarnRatio: parsed[1].spend_earn_ratio,
+        account_type: parsed[2].account_type,
+        current_balance: parsed[3].current_balance,
+      };
+      let objectTransactions = [];
+      let index = 0;
+      let dateTime = new Date();
+      const weekAgo = new Date().getTime() - 604800000;
+      // get only transactions from the last week
+      while (dateTime.getTime() >= weekAgo) {
+        let expandedDate = Object.values(payload.transactions.Date[index])
+          .join('')
+          .split('/');
+        dateTime = new Date(
+          '20' + expandedDate[2],
+          Number(expandedDate[0]) - 1,
+          expandedDate[1]
+        );
+        let fullTransaction = {
+          amount: Object.values(payload.transactions['Amount($)'])[
+            index
+          ].toFixed(2),
+          category: Object.values(payload.transactions.Category[index]).join(
+            ''
+          ),
+          date: Object.values(payload.transactions.Date[index]).join(''),
+        };
+        objectTransactions.push(fullTransaction);
+        index++;
+      }
+      // for (let index = 0; index < 100; index++) {
+      //   let expandedDate = Object.values(payload.transactions.Date[index]).join('').split('/')
+      //   let dateTime = new Date('20'+expandedDate[2], Number(expandedDate[0])-1, expandedDate[1])
+      //   let fullTransaction = {
+      //     amount: Object.values(payload.transactions['Amount($)'])[0],
+      //     category: Object.values(payload.transactions.Category[index]).join(''),
+      //     date: dateTime
+      //   }
+      //   objectTransactions.push(fullTransaction)
+      // }
+      // Object.values(payload.transactions.Date).forEach((transaction, index) => {
+      //   let fullTransaction = {
+      //     // amount: Object.values(payload.transactions['Account($)'])[index],
+      //     category: Object.values(payload.transactions.Category[index]),
+      //     date: Object.values(payload.transactions.Date[index])
+      //   }
+      //   objectTransactions.push(fullTransaction)
+      // })
+      // console.log(objectTransactions)
+      payload.transactions = objectTransactions;
+      // console.log(Object.values(payload.transactions.Category[0]).join(''))
+      // console.log(Object.values(payload.transactions.Date));
+      // console.log(Object.values(payload.transactions['Amount($)'])[0]);
+      // console.log(payload);
+      // const today = new Date().getTime()
+      // console.log(today)
+      dispatch({ type: GET_DASHBOARD, payload });
     });
 };
+
+// export const getColorTheme = dispatch => {
+//   const userId = getEmail();
+
+//   axios.get(`https://saverlife-a-api.herokuapp.com/color/${userId}`)
+//     .then(response => {
+//       dispatch({type: GET_COLOR, payload: response.data})
+//     })
+// }
+// export const postColorTheme = (color) = dispatch => {
+//   axios.post(`https://saverlife-a-api.herokuapp.com/color/${userId}`, { color })
+//     .then(response => {
+//       dispatch({type: GET_COLOR, payload: response.data})
+//     })
+// }
