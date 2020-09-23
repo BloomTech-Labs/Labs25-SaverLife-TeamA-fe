@@ -15,7 +15,9 @@ import {
 const initialState = {
   currentMonthlySpending: {},
   futureBudget: {},
-  dashboard: {},
+  dashboard: {
+    transactions: [],
+  },
   data: {
     spendingBar: {},
     netIncome: {},

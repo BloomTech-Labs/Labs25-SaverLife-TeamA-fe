@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getDashboard } from '../../../actionCreators/mainActions.js';
 import BudgetComparisonContainer from '../../charts/BudgetComparison/BudgetComparisonContainer';
 import { Navbar, GoalProgressBar } from '../../common/index';
+import TransactionsTable from './TransactionsTable';
 
 import '../../../styles/App.scss';
 
@@ -13,10 +14,7 @@ function RenderHomePage(props) {
   const { authService } = props;
 
   const dispatch = useDispatch();
-  const futureBudget = useSelector(state => state.futureBudget);
-  const currentMonthlySpending = useSelector(
-    state => state.currentMonthlySpending
-  );
+  const transactions = useSelector(state => state.dashboard.transactions);
 
   useEffect(() => {
     dispatch(getDashboard());
@@ -44,7 +42,7 @@ function RenderHomePage(props) {
       </div>
 
       <div className="headerText">
-        <h2 className="pageHeader">My Home</h2>
+        <h2 className="pageHeader">My Dashboard</h2>
 
         <Tooltip
           className="tooltipHeader"
@@ -70,7 +68,7 @@ function RenderHomePage(props) {
 
       <div className="contentContainer">
         <div className="borderBox">
-          <p>Content Goes Here</p>
+          <TransactionsTable transactions={transactions} />
         </div>
       </div>
 
