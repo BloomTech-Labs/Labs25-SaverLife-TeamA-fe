@@ -10,6 +10,7 @@ import {
   setUserEmail,
   setUserPhone,
   setUserPassword,
+  getBudgetAction,
 } from '../../../actionCreators/mainActions.js';
 
 import '../../../styles/App.scss';
@@ -60,6 +61,10 @@ const RenderProfilePage = props => {
   useEffect(() => {
     dispatch(getUser());
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getBudgetAction());
+  }, []);
 
   const [darkMode] = React.useState(getMode);
 

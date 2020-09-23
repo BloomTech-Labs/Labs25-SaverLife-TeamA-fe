@@ -267,6 +267,10 @@ button {
     padding: 20px 0px 10px 0px;
 }
 
+.budget {
+    margin-top: 20px;
+}
+
 .dashboardHeader {
     display: flex;
     flex-direction: column;
@@ -339,12 +343,12 @@ h6 {
 }
 
 .individualBar {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     width: 90%;
 }
 
 .budgetBar {
-    height: 25px;
+    height: 30px;
     margin-top: 3px;
 }
 
@@ -497,10 +501,6 @@ h6 {
     .navContainer {
         position: fixed;
         bottom: 0;
-    }
-
-    .pageContainer {
-        flex-direction: column-reverse;
     }
 
     .logo {

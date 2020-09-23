@@ -4,7 +4,10 @@ import { Tooltip, Switch } from 'antd';
 import { QuestionCircleOutlined, BulbTwoTone } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getNetIncomeAction } from '../../../actionCreators/mainActions.js';
+import {
+  getNetIncomeAction,
+  getBudgetAction,
+} from '../../../actionCreators/mainActions.js';
 import Plot from 'react-plotly.js';
 import { Navbar, GoalProgressBar } from '../../common/index';
 
@@ -30,6 +33,7 @@ const RenderNetIncomePage = props => {
 
   useEffect(() => {
     dispatch(getNetIncomeAction());
+    dispatch(getBudgetAction());
   }, []);
 
   const [darkMode, setDarkMode] = React.useState(getMode);

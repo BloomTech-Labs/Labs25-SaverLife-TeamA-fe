@@ -69,7 +69,7 @@ function RenderMyBudgetPage(props) {
       </div>
 
       <div className="contentContainer">
-        <div className="borderBox">
+        <div className="borderBox budget">
           <div className="budgetComparison">
             <BudgetComparisonContainer
               categoryGoals={futureBudget}

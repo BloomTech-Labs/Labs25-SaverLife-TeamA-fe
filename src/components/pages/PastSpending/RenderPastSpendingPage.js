@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   getSpendingBarAction,
   getSpendingDonutAction,
+  getBudgetAction,
 } from '../../../actionCreators/mainActions.js';
 import Plot from 'react-plotly.js';
 import { Navbar, GoalProgressBar } from '../../common/index';
@@ -40,6 +41,7 @@ const RenderPastSpendingPage = props => {
   useEffect(() => {
     dispatch(getSpendingBarAction());
     dispatch(getSpendingDonutAction());
+    dispatch(getBudgetAction());
   }, []);
 
   useEffect(() => {
