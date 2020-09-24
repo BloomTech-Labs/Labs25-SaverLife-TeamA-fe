@@ -70,7 +70,7 @@ export const mainReducer = (state = initialState, action) => {
             ...action.layout,
             width: 475,
             height: 475,
-            legend: { x: 0.25, y: 0.15 },
+            legend: { x: 0.25, y: 0.5 },
           },
         },
       };

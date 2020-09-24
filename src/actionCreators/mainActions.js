@@ -13,7 +13,7 @@ export const SET_USER_EMAIL = 'set_user_email';
 export const SET_USER_PHONE = 'set_user_phone';
 export const SET_USER_PASSWORD = 'set_user_password';
 export const GET_DASHBOARD = 'get_dashboard';
-export const GET_COLOR = 'get_color';
+// export const GET_COLOR = 'get_color';
 
 export const getBudgetAction = () => dispatch => {
   const userId = getEmail();
@@ -167,6 +167,8 @@ export const getDashboard = () => dispatch => {
     .get(`https://saverlife-a-api.herokuapp.com/data/dashboard/${user_id}`)
     .then(response => {
       let parsed = JSON.parse(response.data);
+      console.log(parsed);
+      console.log(JSON.parse(parsed[0]));
       const payload = {
         transactions: JSON.parse(parsed[0]),
         spendEarnRatio: parsed[1].spend_earn_ratio,

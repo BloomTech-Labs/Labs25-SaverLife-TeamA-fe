@@ -49,7 +49,7 @@ function RenderMyBudgetPage(props) {
         <Tooltip
           className="tooltipHeader"
           placement="bottom"
-          title="What do you want others to call you?"
+          title="These are your budgets for specific categories of spending."
         >
           <QuestionCircleOutlined />
         </Tooltip>
