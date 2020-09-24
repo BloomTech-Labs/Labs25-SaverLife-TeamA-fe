@@ -23,7 +23,7 @@ You can find the front end deployed [here](https://a.saverlife.dev) and the back
 - Past Spending provides insight on where users spend their money over weekly/monthly basis
 - Net Income shows daily changes to a users bank account balance
 
-[<img src="https://i.imgur.com/Mp7mMul.png" width="300">](https://i.imgur.com/Mp7mMul.png)
+[<img src="https://i.imgur.com/Mp7mMul.png" width="900">](https://i.imgur.com/Mp7mMul.png)
 
 # Contributing
 
