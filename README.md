@@ -15,11 +15,11 @@ You can find the front end deployed [here](https://a.saverlife.dev) and the back
 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/aurelio-arcabascio/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/mcdelamora/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/juan-gerardo-madero-flores/)                |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/evan-aspaas-a80259198/)                 |
 
 <br>
-<br>
 
 ### Key Features
 
 - Dashboard displaying users recent banking transactions
+<img src="https://imgur.com/Mp7mMul" width="10">
 - Budgeting tool to help users monitor their spending habits
 - Past Spending provides insight on where users spend their money over weekly/monthly basis
 - Net Income shows daily changes to a users bank account balance
