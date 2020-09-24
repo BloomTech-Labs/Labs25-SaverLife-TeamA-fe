@@ -19,7 +19,7 @@ You can find the front end deployed [here](https://a.saverlife.dev) and the back
 ### Key Features
 
 - Dashboard displaying users recent banking transactions
-<img src="https://imgur.com/Mp7mMul" width="10">
+<img src="https://imgur.com/Mp7mMul" width="300">
 - Budgeting tool to help users monitor their spending habits
 - Past Spending provides insight on where users spend their money over weekly/monthly basis
 - Net Income shows daily changes to a users bank account balance
