@@ -22,13 +22,13 @@ You can find the front end deployed [here](https://a.saverlife.dev) and the back
 [<img src="https://i.imgur.com/Mp7mMul.png" width="900">](https://i.imgur.com/Mp7mMul.png)
 <br>
 ### Budgeting tool to help users monitor their spending habits
-[<img src="https://i.imgur.com/Mp7mMul.png" width="900">](https://i.imgur.com/Mp7mMul.png)
+[<img src="https://i.imgur.com/PoWZuhB.png" width="900">](https://i.imgur.com/PoWZuhB.png)
 <br>
 ### Past Spending provides insight on where users spend their money over weekly/monthly basis
-[<img src="https://i.imgur.com/Mp7mMul.png" width="900">](https://i.imgur.com/Mp7mMul.png)
+[<img src="https://i.imgur.com/tkUpaAi.png" width="900">](https://i.imgur.com/tkUpaAi.png)
 <br>
 ### Net Income shows daily changes to a users bank account balance
-[<img src="https://i.imgur.com/Mp7mMul.png" width="900">](https://i.imgur.com/Mp7mMul.png)
+[<img src="https://i.imgur.com/bXOjMsT.png" width="900">](https://i.imgur.com/bXOjMsT.png)
 
 # Contributing
 
