@@ -1,3 +1,9 @@
+![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
+![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
+![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
+
+<br>
+
 # SaverLife
 
 You can find the deployed project [here](https://a.saverlife.dev).
@@ -12,14 +18,6 @@ You can find the deployed project [here](https://a.saverlife.dev).
 
 <br>
 <br>
-
-🚫 Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-
-![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
 
 - Fork and clone the repo to install it as your own remote.
   - **note** please [be sure to set your remote](https://help.github.jp/enterprise/2.11/user/articles/changing-a-remote-s-url/) for this repo to point to your Labs Team Front End Repository.
